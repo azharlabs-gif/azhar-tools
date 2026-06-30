@@ -229,3 +229,8 @@ background:#2563eb;
 font-size:36px;
 margin-bottom:10px;
 }
+.card{
+text-decoration:none;
+color:white;
+display:block;
+}
