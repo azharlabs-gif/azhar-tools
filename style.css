@@ -1,1 +1,117 @@
-/* Azhar Labs Styles */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:#fff;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#111827;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.logo span{
+color:#3b82f6;
+}
+
+.menu{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-size:16px;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#cbd5e1;
+line-height:1.6;
+}
+
+.search-box{
+display:flex;
+justify-content:center;
+margin-top:30px;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.search-box input{
+padding:14px;
+width:300px;
+border:none;
+border-radius:10px;
+}
+
+.search-box button{
+padding:14px 24px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#3b82f6;
+color:white;
+font-weight:bold;
+}
+
+.categories{
+padding:60px 20px;
+}
+
+.categories h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
