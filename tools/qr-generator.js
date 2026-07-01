@@ -19,15 +19,15 @@ function generateQR() {
 }
 
 document.getElementById("downloadBtn").onclick = function () {
-    const img = document.querySelector("#qrcode img");
+    const canvas = document.querySelector("#qrcode canvas");
 
-    if (!img) {
+    if (!canvas) {
         alert("Please generate a QR Code first.");
         return;
     }
 
     const a = document.createElement("a");
-    a.href = img.src;
+    a.href = canvas.toDataURL("image/png");
     a.download = "azhar-labs-qr.png";
     a.click();
 };
