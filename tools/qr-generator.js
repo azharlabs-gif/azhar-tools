@@ -15,3 +15,4 @@ function generateQR() {
         height: 220
     });
 }
+document.getElementById("downloadBtn").style.display = "block";
