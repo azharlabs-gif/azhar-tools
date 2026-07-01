@@ -9,10 +9,25 @@ function generateQR() {
         return;
     }
 
-    new QRCode(document.getElementById("qrcode"), {
+    new QRCode(qr, {
         text: text,
         width: 220,
         height: 220
     });
+
+    document.getElementById("downloadBtn").style.display = "block";
 }
-document.getElementById("downloadBtn").style.display = "block";
+
+document.getElementById("downloadBtn").onclick = function () {
+    const img = document.querySelector("#qrcode img");
+
+    if (!img) {
+        alert("Please generate a QR Code first.");
+        return;
+    }
+
+    const a = document.createElement("a");
+    a.href = img.src;
+    a.download = "azhar-labs-qr.png";
+    a.click();
+};
