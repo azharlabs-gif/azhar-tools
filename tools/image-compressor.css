@@ -104,3 +104,17 @@ margin-bottom:20px;
 .upload-btn:hover{
 background:#1d4ed8;
 }
+#fileName{
+margin:15px 0;
+color:#cbd5e1;
+font-size:15px;
+}
+
+#preview{
+display:none;
+width:100%;
+max-height:300px;
+object-fit:contain;
+border-radius:12px;
+margin-top:15px;
+}
