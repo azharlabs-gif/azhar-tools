@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Split Tool | Azhar Labs</title>
 
+<link rel="stylesheet" href="pdf-split.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>✂️ PDF Split Tool</h1>
+
+<p>Split PDF pages quickly and download the pages you need.</p>
+
+<input type="file" id="pdfInput" accept=".pdf" hidden>
+
+<label for="pdfInput" class="upload-btn">
+📄 Select PDF
+</label>
+
+<p id="fileInfo"></p>
+
+<label for="pageNumber">Enter Page Number</label>
+
+<input type="number" id="pageNumber" placeholder="Example: 3" min="1">
+
+<button onclick="splitPDF()">Split PDF</button>
+
+<br><br>
+
+<a id="downloadBtn" style="display:none;">📥 Download Split PDF</a>
+
+<br><br>
+
+<a href="../index.html" class="back">⬅ Back to Home</a>
+
+</div>
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<script src="pdf-split.js"></script>
+
+</body>
+</html>
