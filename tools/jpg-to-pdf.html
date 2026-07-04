@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPG to PDF | Azhar Labs</title>
 
+<link rel="stylesheet" href="jpg-to-pdf.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🖼️ JPG to PDF</h1>
+
+<p>Select one or more JPG/PNG images and convert them into a PDF.</p>
+
+<input type="file" id="imageInput" accept="image/*" multiple hidden>
+
+<label for="imageInput" class="upload-btn">
+📤 Select Images
+</label>
+
+<p id="fileInfo">No images selected</p>
+
+<button onclick="convertToPDF()">
+📄 Convert to PDF
+</button>
+
+<br><br>
+
+<a id="downloadBtn" style="display:none;">
+📥 Download PDF
+</a>
+
+<br><br>
+
+<a href="../index.html" class="back">
+⬅ Back to Home
+</a>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="jpg-to-pdf.js"></script>
+
+</body>
+</html>
