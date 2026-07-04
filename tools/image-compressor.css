@@ -118,3 +118,15 @@ object-fit:contain;
 border-radius:12px;
 margin-top:15px;
 }
+select{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+font-size:16px;
+margin-top:10px;
+margin-bottom:20px;
+background:#ffffff;
+color:#222;
+cursor:pointer;
+}
