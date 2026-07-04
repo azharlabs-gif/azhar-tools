@@ -14,7 +14,7 @@
 
 <h1>✂️ PDF Split Tool</h1>
 
-<p>Split PDF pages quickly and download the pages you need.</p>
+<p>Extract any page from your PDF in seconds.</p>
 
 <input type="file" id="pdfInput" accept=".pdf" hidden>
 
@@ -22,21 +22,30 @@
 📄 Select PDF
 </label>
 
-<p id="fileInfo"></p>
+<p id="fileInfo">No PDF Selected</p>
 
-<label for="pageNumber">Enter Page Number</label>
+<input
+type="number"
+id="pageNumber"
+placeholder="Enter Page Number (Example: 3)"
+min="1"
+>
 
-<input type="number" id="pageNumber" placeholder="Example: 3" min="1">
+<button onclick="splitPDF()">
+✂️ Split PDF
+</button>
 
-<button onclick="splitPDF()">Split PDF</button>
+<p id="status"></p>
+
+<a id="downloadBtn" style="display:none;">
+📥 Download Split PDF
+</a>
 
 <br><br>
 
-<a id="downloadBtn" style="display:none;">📥 Download Split PDF</a>
-
-<br><br>
-
-<a href="../index.html" class="back">⬅ Back to Home</a>
+<a href="../index.html" class="back">
+⬅ Back to Home
+</a>
 
 </div>
 
