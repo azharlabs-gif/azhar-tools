@@ -1,1 +1,129 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);
+}
+
+.container{
+    width:100%;
+    max-width:520px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+h1{
+    color:#fff;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+p{
+    color:#dbeafe;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.upload-btn{
+    display:block;
+    width:100%;
+    padding:18px;
+    border:2px dashed #60a5fa;
+    border-radius:18px;
+    background:rgba(96,165,250,.12);
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.upload-btn:hover{
+    transform:translateY(-3px);
+    background:rgba(96,165,250,.22);
+    border-color:#93c5fd;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#2563eb;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+#downloadBtn{
+    display:inline-block;
+    padding:15px 22px;
+    border-radius:14px;
+    background:#16a34a;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+#downloadBtn:hover{
+    background:#15803d;
+}
+
+#fileInfo{
+    color:#fff;
+    margin:20px 0;
+    font-size:15px;
+    word-break:break-word;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    color:#93c5fd;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back:hover{
+    color:#fff;
+}
+
+@media (max-width:600px){
+
+.container{
+    padding:25px;
+}
+
+h1{
+    font-size:26px;
+}
+
+.upload-btn,
+button{
+    font-size:16px;
+}
+
+}
