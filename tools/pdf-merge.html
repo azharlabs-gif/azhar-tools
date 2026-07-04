@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Merge | Azhar Labs</title>
 
+<link rel="stylesheet" href="pdf-merge.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📄 PDF Merge Tool</h1>
+
+<p>Select two or more PDF files and merge them into one PDF.</p>
+
+<input type="file" id="pdfInput" accept=".pdf" multiple hidden>
+
+<label for="pdfInput" class="upload-btn">
+📂 Select PDF Files
+</label>
+
+<p id="fileInfo"></p>
+
+<button onclick="mergePDFs()">Merge PDFs</button>
+
+<br><br>
+
+<a id="downloadBtn" style="display:none;">
+📥 Download Merged PDF
+</a>
+
+<br><br>
+
+<a href="../index.html" class="back">⬅ Back to Home</a>
+
+</div>
+
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<script src="pdf-merge.js"></script>
+
+</body>
+</html>
