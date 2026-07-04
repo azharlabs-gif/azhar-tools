@@ -4,6 +4,8 @@ const fileName = document.getElementById("fileName");
 const sizeInfo = document.getElementById("sizeInfo");
 const downloadBtn = document.getElementById("downloadBtn");
 
+const quality = document.getElementById("quality");
+
 let compressedImage = "";
 
 imageInput.addEventListener("change", function () {
@@ -65,7 +67,10 @@ function compressImage(){
 
             ctx.drawImage(img,0,0,width,height);
 
-            compressedImage = canvas.toDataURL("image/jpeg",0.3);
+            compressedImage = canvas.toDataURL(
+    "image/jpeg",
+    parseFloat(quality.value)
+);
 
             preview.src = compressedImage;
 
