@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PDF to JPG | Azhar Labs</title>
+
+<link rel="stylesheet" href="pdf-to-jpg.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📄 PDF to JPG</h1>
+
+<p>
+Convert PDF pages into high-quality JPG images instantly.
+</p>
+
+<input
+type="file"
+id="pdfInput"
+accept=".pdf"
+hidden
+>
+
+<label for="pdfInput" class="upload-btn">
+📤 Select PDF
+</label>
+
+<p id="fileInfo">
+No PDF Selected
+</p>
+
+<button onclick="convertPDF()">
+🖼️ Convert to JPG
+</button>
+
+<p id="status"></p>
+
+<div id="preview"></div>
+
+<a
+id="downloadBtn"
+style="display:none;"
+>
+📥 Download JPG Images
+</a>
+
+<br><br>
+
+<a href="../index.html" class="back">
+⬅ Back to Home
+</a>
+
+</div>
+
+<!-- PDF.js Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script src="pdf-to-jpg.js"></script>
+
+</body>
+</html>
