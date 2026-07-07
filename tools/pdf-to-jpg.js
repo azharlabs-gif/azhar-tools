@@ -4,79 +4,47 @@ const status = document.getElementById("status");
 const preview = document.getElementById("preview");
 const downloadBtn = document.getElementById("downloadBtn");
 
-let imageURL = "";
+let pdfFile = null;
+let pdfDoc = null;
+let totalPages = 0;
 
-pdfInput.addEventListener("change", function () {
+pdfInput.addEventListener("change", async function () {
 
     const file = this.files[0];
 
     if (!file) return;
 
+    pdfFile = file;
+
     fileInfo.innerHTML =
         "📄 <b>" + file.name + "</b><br>" +
         "📦 Size: " + (file.size / 1024).toFixed(1) + " KB";
 
-    status.innerHTML = "";
     preview.innerHTML = "";
     downloadBtn.style.display = "none";
+    status.innerHTML = "⏳ Loading PDF...";
 
-});
+    try {
 
-async function convertPDF() {
+        const buffer = await file.arrayBuffer();
 
-    const file = pdfInput.files[0];
-
-    if (!file) {
-        alert("Please select a PDF first.");
-        return;
-    }
-
-    status.innerHTML = "⏳ Converting...";
-
-    const fileReader = new FileReader();
-
-    fileReader.onload = async function () {
-
-        const typedArray = new Uint8Array(this.result);
-
-        const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
-
-        const page = await pdf.getPage(1);
-
-        const viewport = page.getViewport({ scale: 2 });
-
-        const canvas = document.createElement("canvas");
-        const context = canvas.getContext("2d");
-
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-
-        await page.render({
-            canvasContext: context,
-            viewport: viewport
+        pdfDoc = await pdfjsLib.getDocument({
+            data: buffer
         }).promise;
 
-        const imageData = canvas.toDataURL("image/jpeg", 0.95);
+        totalPages = pdfDoc.numPages;
 
-        preview.innerHTML =
-            "<img src='" + imageData + "' style='max-width:100%;border-radius:12px;'>";
+        status.innerHTML =
+            "✅ PDF Loaded Successfully<br>" +
+            "📄 Total Pages: <b>" + totalPages + "</b>";
 
-        if (imageURL) {
-            URL.revokeObjectURL(imageURL);
-        }
+    } catch (error) {
 
-        const blob = await (await fetch(imageData)).blob();
+        console.error(error);
 
-        imageURL = URL.createObjectURL(blob);
+        status.innerHTML =
+            "❌ Failed to load PDF.";
 
-        downloadBtn.href = imageURL;
-        downloadBtn.download = "page-1.jpg";
-        downloadBtn.style.display = "inline-block";
+    }
 
-        status.innerHTML = "✅ First page converted successfully!";
-
-    };
-
-    fileReader.readAsArrayBuffer(file);
-
-                            }
+});
