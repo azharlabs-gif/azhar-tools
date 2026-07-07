@@ -29,4 +29,21 @@ body{
 
 h1{
     color:#fff;
+    .image-card{
+    margin-top:20px;
+    padding:15px;
+    background:rgba(255,255,255,.08);
+    border-radius:16px;
+}
+
+.image-card a{
+    display:inline-block;
+    margin-top:10px;
+    text-decoration:none;
+    background:#22c55e;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:bold;
+}
    
