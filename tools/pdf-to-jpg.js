@@ -3,6 +3,7 @@ const fileInfo = document.getElementById("fileInfo");
 const status = document.getElementById("status");
 const preview = document.getElementById("preview");
 const downloadBtn = document.getElementById("downloadBtn");
+const zip = new JSZip();
 
 let pdfFile = null;
 let pdfDoc = null;
@@ -79,7 +80,8 @@ async function convertPDF() {
         }).promise;
 
         const imageData = canvas.toDataURL("image/jpeg", 0.95);
-
+        const base64 = imageData.split(",")[1];
+zip.file("page-" + pageNum + ".jpg", base64, { base64: true });
         const card = document.createElement("div");
         card.className = "image-card";
 
@@ -99,7 +101,14 @@ async function convertPDF() {
 
         preview.appendChild(card);
     }
+const zipBlob = await zip.generateAsync({ type: "blob" });
 
+const zipURL = URL.createObjectURL(zipBlob);
+
+downloadBtn.href = zipURL;
+downloadBtn.download = "AzharLabs-PDF-to-JPG.zip";
+downloadBtn.innerHTML = "📥 Download All JPG";
+downloadBtn.style.display = "inline-block";
     status.innerHTML =
         "✅ Successfully converted " + totalPages + " page(s).";
             }
