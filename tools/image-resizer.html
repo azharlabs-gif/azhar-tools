@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image Resizer | Azhar Labs</title>
+
+<link rel="stylesheet" href="image-resizer.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<h1>📏 Image Resizer</h1>
+
+<p>
+Resize your images to any size quickly and easily.
+</p>
+
+
+<input 
+type="file" 
+id="imageInput" 
+accept="image/*"
+hidden
+>
+
+
+<label for="imageInput" class="upload-btn">
+📤 Select Image
+</label>
+
+
+<p id="fileInfo">
+No Image Selected
+</p>
+
+
+
+<div class="controls">
+
+
+<div>
+<label>Width</label>
+
+<input 
+type="number" 
+id="width"
+placeholder="Width"
+>
+</div>
+
+
+
+<div>
+<label>Height</label>
+
+<input 
+type="number" 
+id="height"
+placeholder="Height"
+>
+
+</div>
+
+
+</div>
+
+
+
+<label class="check">
+
+<input type="checkbox" id="ratio" checked>
+
+Maintain Aspect Ratio
+
+</label>
+
+
+
+<button onclick="resizeImage()">
+📏 Resize Image
+</button>
+
+
+
+<p id="status"></p>
+
+
+
+<img 
+id="preview"
+style="display:none;"
+>
+
+
+
+<a 
+id="downloadBtn"
+style="display:none;"
+>
+📥 Download Resized Image
+</a>
+
+
+
+<br><br>
+
+
+<a href="../index.html" class="back">
+⬅ Back to Home
+</a>
+
+
+</div>
+
+
+
+<script src="image-resizer.js"></script>
+
+
+</body>
+
+</html>
