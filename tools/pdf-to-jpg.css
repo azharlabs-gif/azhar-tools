@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
@@ -14,36 +14,296 @@ body{
     background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
 }
 
+
+/* Main Card */
+
 .container{
     width:100%;
     max-width:600px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:24px;
+
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    border-radius:25px;
+
     padding:35px;
+
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
 }
+
+
+/* Heading */
 
 h1{
-    color:#fff;
-    .image-card{
-    margin-top:20px;
-    padding:15px;
-    background:rgba(255,255,255,.08);
-    border-radius:16px;
+    color:white;
+    font-size:34px;
+    margin-bottom:15px;
 }
 
-.image-card a{
-    display:inline-block;
-    margin-top:10px;
-    text-decoration:none;
-    background:#22c55e;
-    color:#fff;
-    padding:10px 16px;
-    border-radius:10px;
-    font-weight:bold;
+
+/* Description */
+
+p{
+    color:#e2e8f0;
+    font-size:16px;
+    line-height:1.6;
+    margin-bottom:20px;
 }
-   
+
+
+/* Upload Button */
+
+.upload-btn{
+
+    display:block;
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.upload-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* File Info */
+
+#fileInfo{
+
+    color:white;
+
+    margin-top:20px;
+
+    font-size:16px;
+
+}
+
+
+
+/* Convert Button */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* Status */
+
+#status{
+
+    margin-top:20px;
+
+    color:#fff;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Preview Area */
+
+#preview{
+
+    margin-top:25px;
+
+}
+
+
+
+/* Each Image Card */
+
+.image-card{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:rgba(255,255,255,0.12);
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+.image-card img{
+
+    width:100%;
+
+    border-radius:14px;
+
+}
+
+
+
+/* Individual Download Buttons */
+
+.image-card a{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:12px 20px;
+
+    background:#22c55e;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Download All Button */
+
+#downloadBtn{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:15px 25px;
+
+    background:#22c55e;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+#downloadBtn:hover{
+
+    background:#16a34a;
+
+}
+
+
+
+/* Back Button */
+
+.back{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    color:#bfdbfe;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:17px;
+
+}
+
+
+.back:hover{
+
+    color:white;
+
+}
+
+
+
+/* Mobile Responsive */
+
+@media(max-width:600px){
+
+    .container{
+
+        padding:25px;
+
+    }
+
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+
+    .upload-btn,
+    button{
+
+        font-size:16px;
+
+    }
+
+    }
