@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grammar Checker | Azhar Labs</title>
+
+<link rel="stylesheet" href="grammar-checker.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h1>✍️ Grammar Checker</h1>
+
+<p>
+Fix grammar mistakes and improve your writing instantly.
+</p>
+
+
+<textarea 
+id="textInput"
+placeholder="Paste your paragraph here..."
+></textarea>
+
+
+<button onclick="checkGrammar()">
+🔍 Check Grammar
+</button>
+
+
+<div class="result">
+
+<h3>✅ Corrected Text</h3>
+
+<p id="output">
+Your corrected text will appear here.
+</p>
+
+</div>
+
+
+<button onclick="copyText()" class="copy">
+📋 Copy Result
+</button>
+
+
+<br><br>
+
+
+<a href="../index.html" class="back">
+⬅ Back to Home
+</a>
+
+
+</div>
+
+
+<script src="grammar-checker.js"></script>
+
+</body>
+
+  </html>
