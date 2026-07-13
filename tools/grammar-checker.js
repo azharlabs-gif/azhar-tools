@@ -6,7 +6,6 @@ async function checkGrammar() {
 
     const text = textInput.value.trim();
 
-
     if (text === "") {
         alert("Please enter some text first.");
         return;
@@ -37,70 +36,60 @@ async function checkGrammar() {
         const data = await response.json();
 
 
-        if (data.error) {
-
-            output.innerHTML =
-            "❌ " + data.error;
-
-            return;
-        }
-
-
-        let correctedText = text;
+        let corrected = text;
 
 
         if (data.matches && data.matches.length > 0) {
 
 
-            data.matches.reverse().forEach((item)=>{
+            data.matches
+            .sort((a,b)=> b.offset - a.offset)
+            .forEach(match => {
 
 
-                if(item.replacements.length > 0){
+                if(match.replacements.length > 0){
 
-                    const replacement =
-                    item.replacements[0].value;
-
-
-                    correctedText =
-                    correctedText.substring(
+                    corrected =
+                    corrected.substring(
                         0,
-                        item.offset
+                        match.offset
                     )
                     +
-                    replacement
+                    match.replacements[0].value
                     +
-                    correctedText.substring(
-                        item.offset + item.length
+                    corrected.substring(
+                        match.offset + match.length
                     );
 
                 }
 
-
             });
 
 
-            output.innerText = correctedText;
+            output.innerHTML =
+            "❌ Original:<br>" +
+            text +
+            "<br><br>" +
+            "✅ Corrected:<br>" +
+            corrected;
 
 
         } else {
 
 
-            output.innerText =
-            "✅ No grammar mistakes found.\n\n" + text;
-
+            output.innerHTML =
+            "✅ No grammar mistakes found!<br><br>" +
+            text;
 
         }
 
 
-    } catch(error) {
-
+    } catch(error){
 
         console.log(error);
 
-
         output.innerHTML =
-        "❌ Server connection error.";
-
+        "❌ Connection error.";
 
     }
 
@@ -108,17 +97,12 @@ async function checkGrammar() {
 
 
 
-
 function copyText(){
 
+    navigator.clipboard.writeText(
+        output.innerText
+    );
 
-    const text =
-    output.innerText;
-
-
-    navigator.clipboard.writeText(text);
-
-
-    alert("✅ Result copied!");
+    alert("✅ Copied!");
 
 }
