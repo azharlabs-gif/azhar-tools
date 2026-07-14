@@ -142,5 +142,4 @@ input[type="range"] {
     .button-group {
         grid-template-columns: 1fr;
     }
-  }
-
+}
