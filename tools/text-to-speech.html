@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech | Azhar Labs</title>
+  <link rel="stylesheet" href="text-to-speech.css">
+</head>
+<body>
 
+<div class="container">
+  <h1>🎙️ Text to Speech</h1>
+  <p>Convert your text into natural speech instantly.</p>
+
+  <textarea
+    id="text"
+    placeholder="Type or paste your text here..."
+    rows="8">
+  </textarea>
+
+  <br><br>
+
+  <button onclick="speak()">🔊 Speak</button>
+  <button onclick="stopSpeech()">⏹ Stop</button>
+
+</div>
+
+<script src="text-to-speech.js"></script>
+
+</body>
+</html>
