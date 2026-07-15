@@ -158,36 +158,22 @@ input[type="range"]{
 }
 
 #stopBtn{
-    background:transparent;
-    color:#ef4444;
-    border:2px solid #ef4444;
-}
-
-#stopBtn:hover{
-    background:#ef4444;
+    background:linear-gradient(135deg,#1e293b,#334155);
     color:#fff;
 }
 }
 
 #copyBtn{
-    background:#18253d;
+    background:linear-gradient(135deg,#1e293b,#334155);
     color:#fff;
-    border:1px solid rgba(255,255,255,.12);
-}
-
-#copyBtn:hover{
-    background:#22314f;
+    border:none;
 }
 }
 
 #clearBtn{
-    background:#18253d;
+    background:linear-gradient(135deg,#1e293b,#334155);
     color:#fff;
-    border:1px solid rgba(255,255,255,.12);
-}
-
-#clearBtn:hover{
-    background:#22314f;
+    border:none;
 }
 }
 
