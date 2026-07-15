@@ -1,67 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech | Azhar Labs</title>
 
-<title>Text to Speech | Azhar Labs</title>
+  <link rel="stylesheet" href="text-to-speech.css">
 
-<link rel="stylesheet" href="text-to-speech.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
-<div class="card">
+  <div class="card">
 
-<h1>
-<i class="fa-solid fa-volume-high"></i>
-Text to Speech
-</h1>
+    <div class="header">
+      <span class="badge">
+        <i class="fa-solid fa-sparkles"></i>
+        AI Powered
+      </span>
 
-<p>
-Convert text into realistic AI speech using ElevenLabs.
-</p>
+      <h1>🎙️ Text to Speech</h1>
 
-<textarea
-id="text"
-placeholder="Type or paste your text here..."
-></textarea>
+      <p>
+        Convert your text into realistic AI voice using ElevenLabs.
+      </p>
+    </div>
 
-<div class="actions">
+    <div class="editor">
 
-<button id="generateBtn">
-<i class="fa-solid fa-wand-magic-sparkles"></i>
-Generate Voice
-</button>
+      <textarea
+        id="text"
+        placeholder="Type or paste your text here..."
+      ></textarea>
 
-<button id="clearBtn">
-<i class="fa-solid fa-trash"></i>
-Clear
-</button>
+      <div class="counter">
 
-</div>
+        <span id="chars">
+          0 Characters
+        </span>
 
-<div id="result" style="display:none;">
+        <span id="words">
+          0 Words
+        </span>
 
-<audio id="audioPlayer" controls></audio>
+      </div>
 
-<a id="downloadBtn" download="speech.mp3">
-<button>
-<i class="fa-solid fa-download"></i>
-Download MP3
-</button>
-</a>
+    </div>
 
-</div>
+    <div class="settings">
 
-</div>
+      <div class="field">
+        <label>Voice</label>
+
+        <select id="voice">
+          <option>Loading Voices...</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Speed</label>
+
+        <input
+          id="speed"
+          type="range"
+          min="0.5"
+          max="2"
+          value="1"
+          step="0.1">
+      </div>
+
+    </div>
+
+    <div class="buttons">
+
+      <button id="generateBtn">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        Generate Voice
+      </button>
+
+      <button id="stopBtn">
+        <i class="fa-solid fa-stop"></i>
+        Stop
+      </button>
+
+      <button id="copyBtn">
+        <i class="fa-solid fa-copy"></i>
+        Copy
+      </button>
+
+      <button id="clearBtn">
+        <i class="fa-solid fa-trash"></i>
+        Clear
+      </button>
+
+    </div>
+
+    <div class="output">
+
+      <audio
+        id="player"
+        controls>
+      </audio>
+
+      <a
+        id="downloadBtn"
+        download="speech.mp3">
+
+        <button>
+          <i class="fa-solid fa-download"></i>
+          Download MP3
+        </button>
+
+      </a>
+
+    </div>
+
+  </div>
 
 </div>
 
