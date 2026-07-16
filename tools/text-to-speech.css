@@ -94,3 +94,99 @@ textarea:focus{
     color:#94a3b8;
     font-size:14px;
 }
+.settings{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:30px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.field label{
+    font-size:15px;
+    font-weight:600;
+    color:#fff;
+}
+
+select{
+    width:100%;
+    height:56px;
+    padding:0 16px;
+    border:none;
+    outline:none;
+    border-radius:16px;
+    background:#0f1c2f;
+    color:#fff;
+    font-size:15px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+input[type="range"]{
+    width:100%;
+    accent-color:#3b82f6;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    margin-top:30px;
+}
+
+.buttons button{
+    height:56px;
+    border:none;
+    border-radius:16px;
+    font-size:16px;
+    font-weight:600;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#generateBtn{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+}
+
+#stopBtn{
+    background:#1e293b;
+}
+
+#copyBtn{
+    background:#1e293b;
+}
+
+#clearBtn{
+    background:#1e293b;
+}
+
+.buttons button:hover{
+    transform:translateY(-3px);
+}
+
+.output{
+    margin-top:30px;
+}
+
+audio{
+    width:100%;
+    border-radius:16px;
+}
+
+#downloadBtn{
+    width:100%;
+    height:56px;
+    margin-top:20px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(135deg,#10b981,#059669);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
