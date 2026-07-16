@@ -177,39 +177,29 @@ audio{
     width:100%;
     border-radius:16px;
 }
-
 #downloadBtn{
+    display:block;
     width:100%;
     height:56px;
     margin-top:20px;
     border:none;
     border-radius:16px;
-    background:linear-gradient(135deg,#10b981,#059669);
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
     color:#fff;
     font-size:16px;
     font-weight:600;
+    text-align:center;
+    text-decoration:none;
     cursor:pointer;
-}
-#downloadBtn{
-    width:100%;
-    height:56px;
-    border:none;
-    border-radius:16px;
-    background:linear-gradient(135deg,#10b981,#059669);
-    color:#fff;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    margin-top:20px;
     transition:.3s;
 }
 
 #downloadBtn:hover{
     transform:translateY(-3px);
-    box-shadow:0 15px 35px rgba(16,185,129,.35);
+    box-shadow:0 15px 35px rgba(37,99,235,.35);
 }
 
 #downloadBtn:disabled{
     opacity:.6;
     cursor:not-allowed;
-}
+    }
