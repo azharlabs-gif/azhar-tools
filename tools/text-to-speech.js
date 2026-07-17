@@ -48,3 +48,23 @@ stopBtn.addEventListener("click", () => {
         stopBtn.innerHTML = '<i class="fa-solid fa-stop"></i> Stop';
     }, 1500);
 });
+const generateBtn = document.getElementById("generateBtn");
+
+generateBtn.addEventListener("click", async () => {
+    if (textInput.value.trim() === "") {
+        alert("Please enter some text first!");
+        return;
+    }
+
+    generateBtn.disabled = true;
+    generateBtn.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Generating...';
+
+    // Yahan baad me ElevenLabs API call hogi
+
+    setTimeout(() => {
+        generateBtn.disabled = false;
+        generateBtn.innerHTML =
+            '<i class="fa-solid fa-wand-magic-sparkles"></i> Generate Voice';
+    }, 2000);
+});
