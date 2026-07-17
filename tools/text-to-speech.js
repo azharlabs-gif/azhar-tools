@@ -35,3 +35,16 @@ clearBtn.addEventListener("click", () => {
     chars.textContent = "0 Characters";
     words.textContent = "0 Words";
 });
+const player = document.getElementById("player");
+const stopBtn = document.getElementById("stopBtn");
+
+stopBtn.addEventListener("click", () => {
+    player.pause();
+    player.currentTime = 0;
+
+    stopBtn.innerHTML = '<i class="fa-solid fa-check"></i> Stopped';
+
+    setTimeout(() => {
+        stopBtn.innerHTML = '<i class="fa-solid fa-stop"></i> Stop';
+    }, 1500);
+});
