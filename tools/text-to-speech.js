@@ -13,3 +13,25 @@ textInput.addEventListener("input", () => {
 
     words.textContent = wordCount + " Words";
 });
+const copyBtn = document.getElementById("copyBtn");
+const clearBtn = document.getElementById("clearBtn");
+
+copyBtn.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(textInput.value);
+
+        copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+
+        setTimeout(() => {
+            copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+        }, 1500);
+    } catch (err) {
+        alert("Copy failed!");
+    }
+});
+
+clearBtn.addEventListener("click", () => {
+    textInput.value = "";
+    chars.textContent = "0 Characters";
+    words.textContent = "0 Words";
+});
