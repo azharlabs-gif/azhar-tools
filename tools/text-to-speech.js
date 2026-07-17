@@ -49,9 +49,12 @@ stopBtn.addEventListener("click", () => {
     }, 1500);
 });
 const generateBtn = document.getElementById("generateBtn");
+const downloadBtn = document.getElementById("downloadBtn");
 
 generateBtn.addEventListener("click", async () => {
-    if (textInput.value.trim() === "") {
+    const text = textInput.value.trim();
+
+    if (!text) {
         alert("Please enter some text first!");
         return;
     }
@@ -60,11 +63,35 @@ generateBtn.addEventListener("click", async () => {
     generateBtn.innerHTML =
         '<i class="fa-solid fa-spinner fa-spin"></i> Generating...';
 
-    // Yahan baad me ElevenLabs API call hogi
+    try {
+        const response = await fetch("https://azhar-tools-api.vercel.app/api/tts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                text: text
+            })
+        });
 
-    setTimeout(() => {
+        if (!response.ok) {
+            const error = await response.text();
+            throw new Error(error);
+        }
+
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+
+        player.src = audioUrl;
+        await player.play();
+
+        downloadBtn.href = audioUrl;
+
+    } catch (err) {
+        alert("Voice generation failed: " + err.message);
+    } finally {
         generateBtn.disabled = false;
         generateBtn.innerHTML =
             '<i class="fa-solid fa-wand-magic-sparkles"></i> Generate Voice';
-    }, 2000);
+    }
 });
