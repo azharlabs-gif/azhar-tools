@@ -50,7 +50,7 @@ stopBtn.addEventListener("click", () => {
 });
 const generateBtn = document.getElementById("generateBtn");
 const downloadBtn = document.getElementById("downloadBtn");
-
+const voice = document.getElementById("voice");
 generateBtn.addEventListener("click", async () => {
     const text = textInput.value.trim();
 
