@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt to Image | Azhar Labs</title>
 
+  <link rel="stylesheet" href="prompt-to-image.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P7748TVE22');
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🎨 AI Image Generator</h1>
+  <p>Create stunning AI images from your text prompts.</p>
+
+  <textarea id="prompt" placeholder="Describe the image you want..."></textarea>
+
+  <select id="size">
+    <option value="1024x1024">Square (1024×1024)</option>
+    <option value="1024x1536">Portrait</option>
+    <option value="1536x1024">Landscape</option>
+  </select>
+
+  <button id="generateBtn">
+    <i class="fa-solid fa-image"></i>
+    Generate Image
+  </button>
+
+  <div class="result">
+    <img id="image" alt="Generated Image">
+  </div>
+
+  <a id="downloadBtn" download="ai-image.png">
+    <button>
+      <i class="fa-solid fa-download"></i>
+      Download Image
+    </button>
+  </a>
+
+  <a href="../index.html" class="back-home">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back to Home
+  </a>
+
+</div>
+
+<script src="prompt-to-image.js"></script>
+
+</body>
+</html>
