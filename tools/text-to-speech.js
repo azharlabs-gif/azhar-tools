@@ -70,8 +70,9 @@ generateBtn.addEventListener("click", async () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                text: text
-            })
+    text: text,
+    voice_id: voice.value
+})
         });
 
         if (!response.ok) {
