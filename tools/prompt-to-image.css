@@ -1,87 +1,223 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#0f172a;
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:25px;
+color:#fff;
 }
 
 .container{
-    width:100%;
-    max-width:800px;
-    background:#1e293b;
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
+width:100%;
+max-width:900px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.12);
+border-radius:28px;
+padding:35px;
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 16px;
+border-radius:50px;
+background:rgba(59,130,246,.18);
+color:#60a5fa;
+font-size:14px;
+font-weight:600;
+margin-bottom:18px;
 }
 
 h1{
-    text-align:center;
-    margin-bottom:10px;
+font-size:42px;
+font-weight:800;
+line-height:1.2;
+margin-bottom:12px;
 }
 
-p{
-    text-align:center;
-    color:#cbd5e1;
-    margin-bottom:25px;
+.subtitle{
+font-size:18px;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.input-box label,
+.field label{
+display:block;
+font-size:15px;
+font-weight:600;
+margin-bottom:10px;
+color:#f8fafc;
 }
 
 textarea{
-    width:100%;
-    height:160px;
-    resize:none;
-    border:none;
-    outline:none;
-    border-radius:12px;
-    padding:15px;
-    font-size:16px;
-    margin-bottom:20px;
+width:100%;
+height:180px;
+resize:none;
+padding:20px;
+border:none;
+outline:none;
+border-radius:18px;
+background:#f8fafc;
+font-size:17px;
+color:#111827;
 }
 
-select,
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    margin-bottom:15px;
+textarea::placeholder{
+color:#64748b;
 }
 
-button{
-    cursor:pointer;
-    font-weight:600;
+.counter{
+margin-top:10px;
+text-align:right;
+font-size:14px;
+color:#cbd5e1;
 }
 
-.result{
-    margin-top:20px;
-    text-align:center;
+.options{
+margin-top:25px;
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
 }
 
-.result img{
-    width:100%;
-    max-height:500px;
-    object-fit:contain;
-    border-radius:15px;
-    display:none;
+select{
+width:100%;
+padding:15px;
+border:none;
+outline:none;
+border-radius:14px;
+font-size:16px;
+background:#fff;
+cursor:pointer;
+}
+
+#generateBtn{
+width:100%;
+margin-top:28px;
+padding:18px;
+border:none;
+border-radius:18px;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:#fff;
+transition:.3s;
+}
+
+#generateBtn:hover{
+transform:translateY(-2px);
+box-shadow:0 15px 35px rgba(37,99,235,.45);
+}
+.preview{
+margin-top:35px;
+background:rgba(255,255,255,.05);
+border:2px dashed rgba(255,255,255,.15);
+border-radius:22px;
+padding:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:360px;
+overflow:hidden;
+}
+
+.preview img{
+max-width:100%;
+border-radius:18px;
+display:block;
+}
+
+#placeholder{
+text-align:center;
+color:#cbd5e1;
+}
+
+#placeholder i{
+font-size:70px;
+margin-bottom:15px;
+}
+
+.actions{
+margin-top:25px;
 }
 
 #downloadBtn{
-    text-decoration:none;
+display:block;
+width:100%;
+text-align:center;
+text-decoration:none;
+padding:18px;
+border-radius:18px;
+background:#10b981;
+color:#fff;
+font-size:18px;
+font-weight:700;
+pointer-events:none;
+opacity:.5;
+transition:.3s;
+}
+
+#downloadBtn.active{
+pointer-events:auto;
+opacity:1;
+}
+
+#downloadBtn:hover{
+transform:translateY(-2px);
 }
 
 .back-home{
-    display:inline-block;
-    margin-top:20px;
-    color:#fff;
-    text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:10px;
+margin-top:30px;
+text-decoration:none;
+color:#fff;
+font-size:17px;
+font-weight:600;
 }
+
+.back-home:hover{
+color:#60a5fa;
+}
+
+@media(max-width:768px){
+
+.card{
+padding:22px;
+}
+
+h1{
+font-size:32px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+textarea{
+height:160px;
+}
+
+.preview{
+min-height:260px;
+}
+
+    }
