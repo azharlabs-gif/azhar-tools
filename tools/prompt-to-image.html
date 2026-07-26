@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AI Image Generator | Azhar Labs</title>
 
-<meta name="description" content="Generate beautiful AI images using AI for free.">
+<meta name="description" content="Generate AI Images for free using Azhar Labs">
 
 <link rel="stylesheet" href="prompt-to-image.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,10 +22,10 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
 
 <script>
-window.dataLayer=window.dataLayer||[];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-P7748TVE22');
+gtag('js', new Date());
+gtag('config', 'G-P7748TVE22');
 </script>
 
 </head>
@@ -43,44 +40,31 @@ gtag('config','G-P7748TVE22');
 <div class="card">
 
 <div class="badge">
-
 <i class="fa-solid fa-sparkles"></i>
-
 <span>AI Powered</span>
-
 </div>
 
 <h1>
-AI Image Generator
+🎨 AI Image Generator
 </h1>
 
 <p class="subtitle">
-
-Turn your imagination into stunning AI images within seconds.
-
+Create stunning AI images from simple text prompts in just a few seconds.
 </p>
 
 <div class="input-section">
 
 <label for="prompt">
-
 Describe your image
-
 </label>
 
 <textarea
 id="prompt"
-placeholder="Example: A futuristic cyberpunk city at sunset, ultra realistic, cinematic lighting, 8K">
-</textarea>
+maxlength="1000"
+placeholder="Example: A futuristic cyberpunk city at sunset, ultra realistic, cinematic lighting, 8K"></textarea>
 
 <div class="counter">
-
-<span id="charCount">
-
-0 Characters
-
-</span>
-
+<span id="charCount">0 Characters</span>
 </div>
 
 </div>
@@ -89,30 +73,22 @@ placeholder="Example: A futuristic cyberpunk city at sunset, ultra realistic, ci
 
 <div class="setting">
 
-<label>
-
+<label for="size">
 Image Size
-
 </label>
 
 <select id="size">
 
 <option value="1024x1024">
-
 Square (1024 × 1024)
-
 </option>
 
 <option value="1024x1536">
-
 Portrait
-
 </option>
 
 <option value="1536x1024">
-
 Landscape
-
 </option>
 
 </select>
@@ -123,48 +99,46 @@ Landscape
 
 <div class="examples">
 
-<button class="example">
-
+<button type="button" class="example">
 🌌 Space Planet
-
 </button>
 
-<button class="example">
-
+<button type="button" class="example">
 🦁 Realistic Lion
-
 </button>
 
-<button class="example">
-
+<button type="button" class="example">
 🏯 Japanese Temple
-
 </button>
 
-<button class="example">
-
+<button type="button" class="example">
 🤖 Futuristic Robot
+</button>
 
+<button type="button" class="example">
+🐉 Dragon
+</button>
+
+<button type="button" class="example">
+🏝️ Tropical Island
 </button>
 
 </div>
 
-<button id="generateBtn">
+<button id="generateBtn" type="button">
 
 <i class="fa-solid fa-wand-magic-sparkles"></i>
 
-Generate Image
+<span>Generate Image</span>
 
 </button>
 <div id="loader" class="loader">
 
 <div class="spinner"></div>
 
-<h3>Generating AI Image...</h3>
+<h3>Generating Your AI Image...</h3>
 
-<p>
-Please wait while AI creates your image.
-</p>
+<p>Please wait a few seconds.</p>
 
 </div>
 
@@ -172,20 +146,17 @@ Please wait while AI creates your image.
 
 <div id="placeholder" class="placeholder">
 
-<i class="fa-regular fa-image"></i>
+<i class="fa-solid fa-image"></i>
 
 <h3>Your AI Image</h3>
 
-<p>
-
-Your generated image will appear here.
-
-</p>
+<p>Your generated image will appear here.</p>
 
 </div>
 
 <img
 id="resultImage"
+src=""
 alt="Generated AI Image">
 
 </div>
@@ -194,20 +165,22 @@ alt="Generated AI Image">
 
 <a
 id="downloadBtn"
+href="#"
 download="azharlabs-ai-image.png">
 
 <i class="fa-solid fa-download"></i>
 
-Download Image
+<span>Download Image</span>
 
 </a>
 
 <button
-id="newBtn">
+id="newBtn"
+type="button">
 
 <i class="fa-solid fa-rotate-right"></i>
 
-Generate Another
+<span>Generate Another</span>
 
 </button>
 
@@ -219,7 +192,7 @@ class="back-home">
 
 <i class="fa-solid fa-arrow-left"></i>
 
-Back to Home
+<span>Back to Home</span>
 
 </a>
 
@@ -230,5 +203,4 @@ Back to Home
 <script src="prompt-to-image.js"></script>
 
 </body>
-
 </html>
