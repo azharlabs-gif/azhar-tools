@@ -2,16 +2,19 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AI Image Generator | Azhar Labs</title>
 
-<meta name="description" content="Generate beautiful AI images from text prompts for free with Azhar Labs.">
+<meta name="description" content="Generate beautiful AI images using AI for free.">
 
 <link rel="stylesheet" href="prompt-to-image.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,9 +25,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
 
 <script>
-window.dataLayer = window.dataLayer || [];
+window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+gtag('js',new Date());
 gtag('config','G-P7748TVE22');
 </script>
 
@@ -32,29 +35,37 @@ gtag('config','G-P7748TVE22');
 
 <body>
 
-<div class="background"></div>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
 
 <div class="container">
 
 <div class="card">
 
 <div class="badge">
+
 <i class="fa-solid fa-sparkles"></i>
-AI Powered
+
+<span>AI Powered</span>
+
 </div>
 
 <h1>
-🎨 AI Image Generator
+AI Image Generator
 </h1>
 
 <p class="subtitle">
-Create stunning AI images in seconds using simple text prompts.
+
+Turn your imagination into stunning AI images within seconds.
+
 </p>
 
-<div class="field">
+<div class="input-section">
 
-<label>
+<label for="prompt">
+
 Describe your image
+
 </label>
 
 <textarea
@@ -64,29 +75,160 @@ placeholder="Example: A futuristic cyberpunk city at sunset, ultra realistic, ci
 
 <div class="counter">
 
-<span id="characters">
+<span id="charCount">
+
 0 Characters
+
 </span>
 
 </div>
 
 </div>
 
-<div class="field">
+<div class="settings">
+
+<div class="setting">
 
 <label>
+
 Image Size
+
 </label>
 
 <select id="size">
 
 <option value="1024x1024">
+
 Square (1024 × 1024)
+
 </option>
 
-<option value="1024x768">
-Landscape (1024 × 768)
+<option value="1024x1536">
+
+Portrait
+
 </option>
 
-<option value="768x1024">
-Portrait (768 × 102
+<option value="1536x1024">
+
+Landscape
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="examples">
+
+<button class="example">
+
+🌌 Space Planet
+
+</button>
+
+<button class="example">
+
+🦁 Realistic Lion
+
+</button>
+
+<button class="example">
+
+🏯 Japanese Temple
+
+</button>
+
+<button class="example">
+
+🤖 Futuristic Robot
+
+</button>
+
+</div>
+
+<button id="generateBtn">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Generate Image
+
+</button>
+<div id="loader" class="loader">
+
+<div class="spinner"></div>
+
+<h3>Generating AI Image...</h3>
+
+<p>
+Please wait while AI creates your image.
+</p>
+
+</div>
+
+<div class="preview-card">
+
+<div id="placeholder" class="placeholder">
+
+<i class="fa-regular fa-image"></i>
+
+<h3>Your AI Image</h3>
+
+<p>
+
+Your generated image will appear here.
+
+</p>
+
+</div>
+
+<img
+id="resultImage"
+alt="Generated AI Image">
+
+</div>
+
+<div class="actions">
+
+<a
+id="downloadBtn"
+download="azharlabs-ai-image.png">
+
+<i class="fa-solid fa-download"></i>
+
+Download Image
+
+</a>
+
+<button
+id="newBtn">
+
+<i class="fa-solid fa-rotate-right"></i>
+
+Generate Another
+
+</button>
+
+</div>
+
+<a
+href="../index.html"
+class="back-home">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+<script src="prompt-to-image.js"></script>
+
+</body>
+
+</html>
