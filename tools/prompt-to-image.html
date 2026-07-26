@@ -2,118 +2,67 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Image Generator | Azhar Labs</title>
+  <title>AI Image Generator | Azhar Labs</title>
 
-<link rel="stylesheet" href="image-generator.css">
+  <meta name="description" content="Generate stunning AI images from text prompts for free with Azhar Labs.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="prompt-to-image.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config','G-P7748TVE22');
-</script>
-
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P7748TVE22');
+  </script>
 </head>
 
 <body>
 
 <div class="container">
 
-<div class="card">
+  <div class="card">
 
-<div class="badge">
-<i class="fa-solid fa-sparkles"></i>
-AI Powered
-</div>
+    <div class="badge">
+      <i class="fa-solid fa-sparkles"></i>
+      <span>AI Powered</span>
+    </div>
 
-<h1>🎨 AI Image Generator</h1>
+    <h1>AI Image Generator</h1>
 
-<p class="subtitle">
-Create beautiful AI images from simple text prompts.
-</p>
+    <p class="subtitle">
+      Turn your imagination into beautiful AI-generated images in seconds.
+    </p>
 
-<label>Describe your image</label>
+    <div class="input-group">
 
-<textarea id="prompt"
-placeholder="Example: A futuristic city at sunset, ultra realistic, 8K"></textarea>
+      <label for="prompt">Prompt</label>
 
-<div class="counter">
-<span id="charCount">0 Characters</span>
-</div>
+      <textarea
+        id="prompt"
+        placeholder="Example: A futuristic city at sunset, ultra realistic, cinematic lighting, 8K">
+      </textarea>
 
-<label>Image Size</label>
+      <div class="counter">
+        <span id="charCount">0 Characters</span>
+      </div>
 
-<select id="size">
+    </div>
 
-<option value="1024x1024">
-Square (1024×1024)
-</option>
+    <div class="settings">
 
-<option value="1024x768">
-Landscape
-</option>
+      <div class="field">
 
-<option value="768x1024">
-Portrait
-</option>
+        <label for="size">Image Size</label>
 
-</select>
-
-<button id="generateBtn">
-
-<i class="fa-solid fa-image"></i>
-
-Generate Image
-
-</button>
-
-<div class="preview">
-
-<img id="resultImage" hidden>
-
-<div id="placeholder">
-
-<i class="fa-regular fa-image"></i>
-
-<p>Your generated image will appear here.</p>
-
-</div>
-
-</div>
-
-<a id="downloadBtn" download>
-
-<i class="fa-solid fa-download"></i>
-
-Download Image
-
-</a>
-
-<a href="../index.html" class="back">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Back to Home
-
-</a>
-
-</div>
-
-</div>
-
-<script src="image-generator.js"></script>
-
-</body>
-</html>
+        <select id="size">
+          <option value="1024x1024">Square (1024 × 1024)</option>
+          <option value="1024x1536">Portrait</
