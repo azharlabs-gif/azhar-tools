@@ -74,7 +74,7 @@ downloadBtn.style.display = "none";
 
 try{
 
-const response = await fetch("/api/image",{
+const response = await fetch("https://azhar-ai-image-generator.vercel.app/api/image", {
 
 method:"POST",
 
