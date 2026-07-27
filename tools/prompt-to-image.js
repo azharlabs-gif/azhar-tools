@@ -94,7 +94,8 @@ size:size.value
 
 if(!response.ok){
 
-throw new Error("Failed to generate image");
+const err = await response.json();
+throw new Error(err.error || "Failed to generate image");
 
 }
 
