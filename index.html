@@ -1,179 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azhar Tools | Free Tools for Everyone</title>
+
+<title>Azhar Labs | Free AI, PDF, Image & Online Tools</title>
+
+<meta name="description" content="Azhar Labs provides free AI, PDF, Image, Text and Productivity tools.">
 
 <link rel="stylesheet" href="style.css">
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-P7748TVE22');
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
 </head>
 
 <body>
 
-<nav>
+<div class="bg-blur bg1"></div>
+<div class="bg-blur bg2"></div>
 
-<div class="logo">
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+
+<i class="fa-solid fa-bolt"></i>
+
 Azhar <span>Labs</span>
-</div>
+
+</a>
 
 <ul>
+
 <li><a href="#">Home</a></li>
-<li><a href="#">AI</a></li>
-<li><a href="#">PDF</a></li>
-<li><a href="#">Image</a></li>
-<li><a href="#">Text</a></li>
+
+<li><a href="#categories">Categories</a></li>
+
+<li><a href="#tools">Tools</a></li>
+
+<li><a href="#">About</a></li>
+
 <li><a href="#">Contact</a></li>
+
 </ul>
+
+<a href="#tools" class="nav-btn">
+
+Explore
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
 
 </nav>
 
+</header>
+
 <section class="hero">
 
-<span class="badge">🚀 New Free Tools Every Week</span>
+<div class="hero-left">
 
-<h1>Powerful Free Tools<br>For Everyone</h1>
+<span class="badge">
+
+🚀 100% Free Tools Forever
+
+</span>
+
+<h1>
+
+Powerful AI & Online
+
+<span>Tools For Everyone</span>
+
+</h1>
 
 <p>
-Discover fast, secure and free online tools for everyone.
-No signup. No subscription. Just free tools.
+
+Generate AI Images, edit PDFs, resize images, convert files, create passwords and use dozens of powerful online tools.
+
+No Signup.
+
+No Subscription.
+
+100% Free.
+
 </p>
 
-<div class="search">
+<div class="hero-search">
 
-<input type="text" placeholder="Search tools...">
+<input
+type="text"
+placeholder="Search any tool...">
 
-<button>Search</button>
+<button>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Search
+
+</button>
 
 </div>
 
 <div class="hero-buttons">
 
-<a href="#categories" class="btn btn-primary">Explore Tools</a>
+<a href="#tools" class="primary-btn">
 
-<a href="#" class="btn btn-secondary">Latest Tools</a>
+Explore Tools
+
+</a>
+
+<a href="#categories" class="secondary-btn">
+
+Browse Categories
+
+</a>
 
 </div>
 
-</section>
+<div class="hero-stats">
 
-<section class="stats">
-  
-<div class="stat-card">
+<div>
+
+<h2>15+</h2>
+
+<p>Free Tools</p>
+
+</div>
+
+<div>
+
 <h2>100%</h2>
+
 <p>Free Forever</p>
+
 </div>
 
-<div class="stat-card">
-<h2>Fast</h2>
-<p>Lightning Speed</p>
-</div>
+<div>
 
-<div class="stat-card">
 <h2>24/7</h2>
-<p>Always Available</p>
+
+<p>Available</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="images/hero-ai.png" alt="AI Illustration">
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- Categories Section -->
+<!-- ========================= -->
+
+<section id="categories" class="categories">
+
+<h2>Browse Categories</h2>
+
+<div class="category-grid">
+
+<a href="#tools"><i class="fa-solid fa-robot"></i><span>AI</span></a>
+
+<a href="#tools"><i class="fa-solid fa-file-pdf"></i><span>PDF</span></a>
+
+<a href="#tools"><i class="fa-solid fa-image"></i><span>Image</span></a>
+
+<a href="#tools"><i class="fa-solid fa-font"></i><span>Text</span></a>
+
+<a href="#tools"><i class="fa-solid fa-lock"></i><span>Security</span></a>
+
+<a href="#tools"><i class="fa-solid fa-qrcode"></i><span>QR</span></a>
+
 </div>
 
 </section>
 
-<section class="tools" id="categories">
-  
-</div>
+<!-- ========================= -->
+<!-- Tools -->
+<!-- ========================= -->
 
-</section>
-<section class="tools">
+<section id="tools" class="tools">
 
-<h2>🔥 Trending Tools</h2>
+<h2>🔥 Popular Free Tools</h2>
 
-<div class="cards">
+<div class="tool-grid">
 
-<a href="tools/password-generator.html" class="card">
-<h3>🔐 Password Generator</h3>
-<p>Create strong and secure passwords.</p>
+<a href="tools/prompt-to-image.html" class="tool-card">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+<h3>AI Image Generator</h3>
+<p>Create stunning AI images from text prompts.</p>
 </a>
 
-<a href="tools/qr-generator.html" class="card">
-<h3>📱 QR Code Generator</h3>
-<p>Create QR codes instantly.</p>
+<a href="tools/password-generator.html" class="tool-card">
+<i class="fa-solid fa-lock"></i>
+<h3>Password Generator</h3>
+<p>Create secure passwords instantly.</p>
 </a>
 
-<a href="tools/age-calculator.html" class="card">
-<h3>📊 Age Calculator</h3>
+<a href="tools/qr-generator.html" class="tool-card">
+<i class="fa-solid fa-qrcode"></i>
+<h3>QR Code Generator</h3>
+<p>Create QR codes for free.</p>
+</a>
+
+<a href="tools/age-calculator.html" class="tool-card">
+<i class="fa-solid fa-calendar-days"></i>
+<h3>Age Calculator</h3>
 <p>Calculate your exact age.</p>
 </a>
 
-<a href="tools/image-compressor.html" class="card">
-<h3>🖼️ Image Compressor</h3>
+<a href="tools/image-compressor.html" class="tool-card">
+<i class="fa-solid fa-file-image"></i>
+<h3>Image Compressor</h3>
 <p>Compress images without losing quality.</p>
 </a>
 
-<a href="tools/pdf-merge.html" class="card">
-<h3>📄 PDF Merge Tool</h3>
-<p>Merge multiple PDF files into one PDF.</p>
+<a href="tools/image-resizer.html" class="tool-card">
+<i class="fa-solid fa-expand"></i>
+<h3>Image Resizer</h3>
+<p>Resize images in seconds.</p>
 </a>
-  
-  <a href="tools/pdf-split.html" class="card">
-<h3>✂️ PDF Split Tool</h3>
-<p>Split PDF pages into separate PDF files.</p>
-  </a>
-  
-  <a href="tools/jpg-to-pdf.html" class="card">
-<h3>🖼️ JPG to PDF</h3>
-<p>Convert JPG & PNG images into one PDF.</p>
-  </a>
-  
-  <a href="tools/pdf-to-jpg.html" class="card">
-<h3>📄 PDF to JPG</h3>
-<p>Convert PDF pages into high-quality JPG images.</p>
-  </a>
-  
-  <a href="tools/image-resizer.html" class="card">
-<h3>📏 Image Resizer</h3>
-<p>Resize images to any size easily.</p>
-  </a>
-  
-  <a href="tools/grammar-checker.html" class="card">
 
-<h3>✍️ Grammar Checker</h3>
+<a href="tools/pdf-merge.html" class="tool-card">
+<i class="fa-solid fa-file-pdf"></i>
+<h3>Merge PDF</h3>
+<p>Merge multiple PDFs into one.</p>
+</a>
 
-<p>Fix grammar mistakes and improve your writing.</p>
+<a href="tools/pdf-split.html" class="tool-card">
+<i class="fa-solid fa-scissors"></i>
+<h3>Split PDF</h3>
+<p>Split PDF pages easily.</p>
+</a>
 
-  </a>
-  
-  <a href="tools/text-to-speech.html" class="card">
-    <h3>🎙️ Text to Speech</h3>
-    <p>Convert your text into natural speech instantly for free.</p>
-  </a>
-  <a href="tools/prompt-to-image.html" class="card">
-  <i class="fa-solid fa-image"></i>
+<a href="tools/jpg-to-pdf.html" class="tool-card">
+<i class="fa-solid fa-file-arrow-up"></i>
+<h3>JPG to PDF</h3>
+<p>Convert images into PDF.</p>
+</a>
 
-  <h3>AI Image Generator</h3>
+<a href="tools/pdf-to-jpg.html" class="tool-card">
+<i class="fa-solid fa-file-arrow-down"></i>
+<h3>PDF to JPG</h3>
+<p>Convert PDF pages into JPG.</p>
+</a>
 
-  <p>
-    Generate stunning AI images from text prompts in seconds.
-  </p>
-  </a>
-  
+<a href="tools/grammar-checker.html" class="tool-card">
+<i class="fa-solid fa-spell-check"></i>
+<h3>Grammar Checker</h3>
+<p>Fix grammar mistakes instantly.</p>
+</a>
+
+<a href="tools/text-to-speech.html" class="tool-card">
+<i class="fa-solid fa-volume-high"></i>
+<h3>Text To Speech</h3>
+<p>Convert text into natural speech.</p>
+</a>
+
+</div>
+
+  </section>
+  <!-- ========================= -->
+<!-- Why Choose Azhar Labs -->
+<!-- ========================= -->
+
+<section class="features">
+
+<h2>Why Choose Azhar Labs?</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<i class="fa-solid fa-bolt"></i>
+<h3>Lightning Fast</h3>
+<p>All tools work instantly with a smooth experience.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-shield-halved"></i>
+<h3>Safe & Secure</h3>
+<p>Your privacy comes first. No unnecessary data collection.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-gift"></i>
+<h3>100% Free</h3>
+<p>Every tool is free to use. No subscription required.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-mobile-screen"></i>
+<h3>Mobile Friendly</h3>
+<p>Optimized for phones, tablets and desktops.</p>
+</div>
 
 </div>
 
 </section>
-<footer>
 
-<p>© 2026 Azhar Labs. All Rights Reserved.</p>
+<!-- ========================= -->
+<!-- Newsletter -->
+<!-- ========================= -->
+
+<section class="newsletter">
+
+<h2>Stay Updated 🚀</h2>
+
+<p>Get notified whenever new free tools are added.</p>
+
+<div class="newsletter-box">
+
+<input type="email" placeholder="Enter your email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Footer -->
+<!-- ========================= -->
+
+<footer class="footer">
+
+<div class="footer-top">
+
+<div class="footer-logo">
+
+<h2>⚡ Azhar <span>Labs</span></h2>
+
+<p>
+
+Free AI, PDF, Image & Productivity tools for everyone.
+
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Quick Links</h3>
+
+<a href="#">Home</a>
+
+<a href="#categories">Categories</a>
+
+<a href="#tools">Tools</a>
+
+<a href="#">Contact</a>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Popular Tools</h3>
+
+<a href="tools/prompt-to-image.html">AI Image Generator</a>
+
+<a href="tools/password-generator.html">Password Generator</a>
+
+<a href="tools/pdf-merge.html">PDF Merge</a>
+
+<a href="tools/text-to-speech.html">Text to Speech</a>
+
+</div>
+
+<div class="footer-social">
+
+<h3>Follow Us</h3>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+<a href="#"><i class="fab fa-youtube"></i></a>
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 Azhar Labs. All Rights Reserved.
+
+</p>
 
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
