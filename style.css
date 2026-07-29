@@ -999,3 +999,48 @@ font-size:28px;
 }
 
       }
+/* ===== Animated Background ===== */
+
+.bg-blur{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.35;
+    z-index:-1;
+    animation:float 14s ease-in-out infinite;
+}
+
+.blur1{
+    width:320px;
+    height:320px;
+    background:#3b82f6;
+    top:-100px;
+    left:-100px;
+}
+
+.blur2{
+    width:280px;
+    height:280px;
+    background:#7c3aed;
+    top:40%;
+    right:-100px;
+    animation-delay:3s;
+}
+
+.blur3{
+    width:260px;
+    height:260px;
+    background:#06b6d4;
+    bottom:-100px;
+    left:35%;
+    animation-delay:6s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0) translateX(0);
+    }
+    50%{
+        transform:translateY(-40px) translateX(30px);
+    }
+  }
