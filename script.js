@@ -80,3 +80,55 @@ if (searchInput) {
     });
 
 }
+// ==============================
+// Animated Stats Counter
+// ==============================
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target;
+            const target = +counter.dataset.target;
+
+            let count = 0;
+            const speed = target / 60;
+
+            const updateCounter = () => {
+
+                count += speed;
+
+                if (count < target) {
+
+                    counter.innerText = Math.ceil(count);
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    if (target === 100) {
+                        counter.innerText = "100%";
+                    } else if (target === 24) {
+                        counter.innerText = "24/7";
+                    } else {
+                        counter.innerText = target + "+";
+                    }
+
+                }
+
+            };
+
+            updateCounter();
+            counterObserver.unobserve(counter);
+
+        }
+
+    });
+
+}, { threshold: 0.5 });
+
+counters.forEach(counter => counterObserver.observe(counter));
