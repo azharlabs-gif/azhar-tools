@@ -52,3 +52,31 @@ topBtn.addEventListener("click", () => {
     });
 
 });
+// ==============================
+// Live Tool Search
+// ==============================
+
+const searchInput = document.getElementById("toolSearch");
+const toolCards = document.querySelectorAll(".tool-card");
+
+if (searchInput) {
+
+    searchInput.addEventListener("keyup", () => {
+
+        const value = searchInput.value.toLowerCase();
+
+        toolCards.forEach(card => {
+
+            const text = card.textContent.toLowerCase();
+
+            if (text.includes(value)) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+}
