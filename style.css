@@ -565,11 +565,18 @@ left:100%;
 
 .tool-card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-12px) scale(1.03);
 
-border-color:#3B82F6;
+border-color:#60A5FA;
 
-box-shadow:0 20px 45px rgba(59,130,246,.25);
+box-shadow:0 25px 60px rgba(59,130,246,.35);
+
+}
+.tool-card:hover .tool-icon{
+
+    transform: rotate(10deg) scale(1.12);
+
+    transition: .4s;
 
 }
 
