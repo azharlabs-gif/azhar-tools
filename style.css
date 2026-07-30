@@ -1169,3 +1169,42 @@ visibility:visible;
     transform:translateY(-6px) scale(1.08);
     box-shadow:0 15px 35px rgba(59,130,246,.5);
 }
+/*========== SEARCH BOX ==========*/
+
+.search-box{
+    max-width:600px;
+    margin:40px auto;
+    position:relative;
+}
+
+.search-box i{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#9CA3AF;
+    font-size:18px;
+}
+
+.search-box input{
+    width:100%;
+    padding:18px 20px 18px 55px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.12);
+    color:#fff;
+    font-size:16px;
+    transition:.35s;
+}
+
+.search-box input::placeholder{
+    color:#9CA3AF;
+}
+
+.search-box input:focus{
+    border-color:#3B82F6;
+    box-shadow:0 0 25px rgba(59,130,246,.35);
+}
