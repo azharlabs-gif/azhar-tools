@@ -61,7 +61,7 @@ Azhar <span>Labs</span>
 
 <!--========== HERO ==========-->
 
-<section class="hero">
+<section class="hero" data-aos="fade-up">
 
 <div class="container hero-content">
 
@@ -123,7 +123,7 @@ Fast • Secure • Responsive
 
   <!--========== STATS ==========-->
 
-<section class="stats">
+<section class="stats" data-aos="fade-up">
 
 <div class="container stats-grid">
 
@@ -153,7 +153,7 @@ Fast • Secure • Responsive
 
 <!--========== POPULAR TOOLS ==========-->
 
-<section class="tools" id="tools">
+<section class="tools" id="tools" data-aos="fade-up">
 
 <div class="container">
 
@@ -171,7 +171,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 <div class="tools-grid">
 
-<a href="tools/prompt-to-image.html" class="tool-card featured">
+<a href="tools/prompt-to-image.html" class="tool-card featured" data-aos="zoom-in">
 
 <div class="tool-icon">
 🤖
@@ -185,7 +185,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/password-generator.html" class="tool-card">
+<a href="tools/password-generator.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 🔐
@@ -199,7 +199,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/qr-generator.html" class="tool-card">
+<a href="tools/qr-generator.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 📱
@@ -213,7 +213,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/age-calculator.html" class="tool-card">
+<a href="tools/age-calculator.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 📅
@@ -227,7 +227,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/image-compressor.html" class="tool-card">
+<a href="tools/image-compressor.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 🖼️
@@ -241,7 +241,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/image-resizer.html" class="tool-card">
+<a href="tools/image-resizer.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 📐
@@ -255,7 +255,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/pdf-merge.html" class="tool-card">
+<a href="tools/pdf-merge.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 📄
@@ -269,7 +269,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/pdf-split.html" class="tool-card">
+<a href="tools/pdf-split.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 ✂️
@@ -283,7 +283,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/jpg-to-pdf.html" class="tool-card">
+<a href="tools/jpg-to-pdf.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 🖼️
@@ -297,7 +297,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/pdf-to-jpg.html" class="tool-card">
+<a href="tools/pdf-to-jpg.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 📷
@@ -311,7 +311,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/grammar-checker.html" class="tool-card">
+<a href="tools/grammar-checker.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 ✍️
@@ -325,7 +325,7 @@ Everything you need for AI, PDF, Images and Text — all in one place.
 
 </a>
 
-<a href="tools/text-to-speech.html" class="tool-card">
+<a href="tools/text-to-speech.html" class="tool-card" data-aos="zoom-in">
 
 <div class="tool-icon">
 🎤
@@ -527,6 +527,14 @@ Simple, secure and completely free.
 </footer>
 
 <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+  duration: 900,
+  once: true
+});
+</script>
 
 </body>
 </html>
