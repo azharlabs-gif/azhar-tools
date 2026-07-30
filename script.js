@@ -28,9 +28,9 @@ if (menuToggle && navbar) {
     });
 
 }
-// ===============================
-// Back To Top Button
-// ===============================
+// ==============================
+// Scroll To Top Button
+// ==============================
 
 const topBtn = document.getElementById("topBtn");
 
