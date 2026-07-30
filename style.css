@@ -1127,3 +1127,38 @@ font-size:28px;
 .menu-toggle.active span:nth-child(3){
     transform: rotate(-45deg) translate(6px,-6px);
 }
+/*========== BACK TO TOP BUTTON ==========*/
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,#3b82f6,#7c3aed);
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 30px rgba(59,130,246,.35);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+    transition:.35s;
+    z-index:999;
+}
+
+#topBtn.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+#topBtn:hover{
+    transform:translateY(-6px) scale(1.08);
+    box-shadow:0 15px 35px rgba(59,130,246,.5);
+}
