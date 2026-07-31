@@ -726,3 +726,15 @@ font-size:15px;
     background:#fff;
     padding:10px;
 }
+.btn,
+#generateBtn,
+#downloadBtn{
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.qr-box{
+    position: relative;
+    z-index: 1;
+}
