@@ -1,81 +1,478 @@
+/*========================================
+AZHAR LABS - AGE CALCULATOR
+PART 1
+Premium Background + Glass Card
+========================================*/
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
-color:#fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    overflow-x:hidden;
+    color:#fff;
+    background:linear-gradient(135deg,#020617,#0f172a,#111827,#1e3a8a);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    position:relative;
+}
+
+/* Floating Glow */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(59,130,246,.18);
+    top:-120px;
+    left:-120px;
+    filter:blur(90px);
+    animation:floatOne 8s ease-in-out infinite;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:360px;
+    height:360px;
+    border-radius:50%;
+    background:rgba(168,85,247,.16);
+    bottom:-120px;
+    right:-120px;
+    filter:blur(90px);
+    animation:floatTwo 10s ease-in-out infinite;
+    z-index:-2;
 }
 
 .container{
-width:100%;
-max-width:500px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-padding:35px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.3);
-text-align:center;
+    width:100%;
+    max-width:520px;
 }
+
+.container::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.container{
+    position:relative;
+}
+
+.card,
+.container{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:28px;
+    padding:40px 35px;
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.35),
+    inset 0 1px 1px rgba(255,255,255,.08);
+}
+
+/* Heading */
 
 h1{
-font-size:32px;
-margin-bottom:10px;
+    font-size:2rem;
+    font-weight:700;
+    text-align:center;
+    margin-bottom:12px;
+    letter-spacing:.5px;
 }
 
-p{
-color:#cbd5e1;
-margin-bottom:25px;
+h1 i{
+    color:#60A5FA;
+    margin-right:10px;
+    animation:iconFloat 3s ease-in-out infinite;
 }
 
-input{
-width:100%;
-padding:15px;
-border:none;
-border-radius:12px;
-font-size:16px;
-margin-bottom:20px;
-outline:none;
+.subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+/* Animations */
+
+@keyframes bgMove{
+
+    0%{background-position:0% 50%;}
+
+    50%{background-position:100% 50%;}
+
+    100%{background-position:0% 50%;}
+
+}
+
+@keyframes floatOne{
+
+    50%{
+        transform:translateY(40px);
+    }
+
+}
+
+@keyframes floatTwo{
+
+    50%{
+        transform:translateY(-40px);
+    }
+
+}
+
+@keyframes iconFloat{
+
+    50%{
+        transform:translateY(-8px) rotate(-6deg);
+    }
+
+}
+
+/*========================================
+PART 2
+Premium Input + Button
+========================================*/
+
+input[type="date"]{
+    width:100%;
+    height:60px;
+    margin-bottom:25px;
+    padding:0 18px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    color:#fff;
+    font-size:16px;
+    font-weight:500;
+    transition:.35s ease;
+    box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.05),
+    0 10px 25px rgba(0,0,0,.15);
+}
+
+input[type="date"]:hover{
+    border-color:#3b82f6;
+}
+
+input[type="date"]:focus{
+    border-color:#60a5fa;
+    box-shadow:
+    0 0 0 4px rgba(59,130,246,.18),
+    0 15px 35px rgba(59,130,246,.25);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+    cursor:pointer;
+    filter:invert(1);
+    opacity:.9;
 }
 
 button{
-width:100%;
-padding:15px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:12px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+    width:100%;
+    height:60px;
+    border:none;
+    border-radius:18px;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    font-size:17px;
+    font-weight:700;
+    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#3b82f6,#60a5fa);
+    box-shadow:
+    0 18px 35px rgba(37,99,235,.35);
+    transition:.35s ease;
+}
+
+button i{
+    margin-right:10px;
 }
 
 button:hover{
-background:#1d4ed8;
-transform:translateY(-2px);
+    transform:translateY(-4px);
+    box-shadow:
+    0 25px 45px rgba(37,99,235,.45);
 }
 
+button:active{
+    transform:scale(.98);
+}
+
+/* Shine Animation */
+
+button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform:skewX(-25deg);
+    transition:.8s;
+}
+
+button:hover::before{
+    left:160%;
+}
+
+/*========================================
+PART 3
+Premium Result Card
+========================================*/
+
 #result{
-margin-top:25px;
-font-size:20px;
-font-weight:bold;
-color:#22c55e;
-line-height:1.8;
+    margin-top:30px;
+    padding:25px;
+    border-radius:22px;
+    text-align:center;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.25),
+    inset 0 1px 1px rgba(255,255,255,.08);
+    animation:resultFade .6s ease;
+    transition:.35s;
+}
+
+#result:hover{
+    transform:translateY(-5px);
+    border-color:rgba(96,165,250,.45);
+    box-shadow:
+    0 25px 50px rgba(37,99,235,.25);
+}
+
+#result h2{
+    font-size:1.5rem;
+    margin-bottom:12px;
+    color:#60a5fa;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+#result p{
+    font-size:1.15rem;
+    font-weight:600;
+    color:#f8fafc;
+    line-height:1.8;
 }
 
 .back{
-display:inline-block;
-margin-top:25px;
-text-decoration:none;
-color:#fff;
-font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    margin-top:28px;
+    padding:16px;
+    border-radius:18px;
+    text-decoration:none;
+    font-weight:600;
+    color:#fff;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    transition:.35s;
+}
+
+.back:hover{
+    background:rgba(59,130,246,.18);
+    border-color:#3b82f6;
+    transform:translateY(-3px);
+}
+
+@keyframes resultFade{
+
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+/*========================================
+PART 4
+Responsive + Final Premium Polish
+========================================*/
+
+/* Smooth Scrolling */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Text Selection */
+
+::selection{
+    background:#3b82f6;
+    color:#fff;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg,#2563eb,#60a5fa);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#3b82f6;
+}
+
+/* Floating Animation */
+
+.container{
+    animation:cardFloat 5s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .container{
+
+        max-width:100%;
+        padding:30px 22px;
+
+    }
+
+    h1{
+
+        font-size:1.8rem;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+    input[type="date"]{
+
+        height:56px;
+        font-size:15px;
+
+    }
+
+    button{
+
+        height:56px;
+        font-size:16px;
+
+    }
+
+    #result h2{
+
+        font-size:1.3rem;
+
+    }
+
+    #result p{
+
+        font-size:1rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+
+        padding:18px;
+
+    }
+
+    .container{
+
+        border-radius:24px;
+        padding:25px 18px;
+
+    }
+
+    h1{
+
+        font-size:1.6rem;
+
+    }
+
+    h1 i{
+
+        display:block;
+        margin:0 0 10px;
+
+    }
+
+    .subtitle{
+
+        line-height:1.6;
+
+    }
+
+    .back{
+
+        padding:14px;
+
+    }
+
+}
+
+/* Performance */
+
+*{
+    -webkit-tap-highlight-color:transparent;
 }
