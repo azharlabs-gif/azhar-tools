@@ -1,95 +1,78 @@
-alert("JS Loaded");
-// =====================================
-// AZHAR LABS - QR CODE GENERATOR
-// =====================================
+// ===============================
+// AZHAR LABS - QR GENERATOR
+// ===============================
 
 const qrText = document.getElementById("qrText");
 const qrBox = document.getElementById("qrcode");
 const generateBtn = document.getElementById("generateBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 
-// Generate QR Code
+// Generate QR
 function generateQR() {
 
     const text = qrText.value.trim();
 
     if (text === "") {
-
-        alert("Please enter text or URL.");
-
+        alert("Please enter a URL or text.");
         qrText.focus();
-
         return;
-
     }
 
-    // Remove old QR
+    // Check QR Library
+    if (typeof QRCode === "undefined") {
+        alert("QRCode library failed to load.");
+        return;
+    }
+
+    // Clear old QR
     qrBox.innerHTML = "";
 
-    // Create new QR
+    // Create QR
     new QRCode(qrBox, {
-
         text: text,
-
         width: 220,
-
         height: 220,
-
         colorDark: "#000000",
-
         colorLight: "#ffffff",
-
         correctLevel: QRCode.CorrectLevel.H
-
     });
 
     // Show Download Button
-    downloadBtn.style.display = "flex";
-
+    downloadBtn.style.display = "block";
 }
 
 // Generate Button
 generateBtn.addEventListener("click", generateQR);
 
-// Press Enter
-qrText.addEventListener("keydown", function(e){
-
-    if(e.key === "Enter"){
-
+// Enter Key Support
+qrText.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
         generateQR();
-
     }
-
 });
 
 // Download QR
-downloadBtn.addEventListener("click", () => {
+downloadBtn.addEventListener("click", function () {
 
     const img = qrBox.querySelector("img");
     const canvas = qrBox.querySelector("canvas");
 
-    let url = "";
+    let imageURL = "";
 
-    if(img){
-
-        url = img.src;
-
-    }else if(canvas){
-
-        url = canvas.toDataURL("image/png");
-
+    if (img) {
+        imageURL = img.src;
+    } else if (canvas) {
+        imageURL = canvas.toDataURL("image/png");
+    } else {
+        alert("Generate a QR Code first.");
+        return;
     }
 
-    if(url){
-
-        const link = document.createElement("a");
-
-        link.href = url;
-
-        link.download = "azhar-labs-qr-code.png";
-
-        link.click();
-
-    }
+    const a = document.createElement("a");
+    a.href = imageURL;
+    a.download = "azhar-labs-qr-code.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 
 });
