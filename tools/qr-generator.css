@@ -706,3 +706,23 @@ font-size:15px;
 }
 
 }
+.qr-box{
+    width:290px;
+    height:290px;
+    margin:35px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px dashed rgba(255,255,255,.15);
+    border-radius:22px;
+    overflow:hidden;
+}
+
+#qrcode canvas,
+#qrcode img{
+    width:260px !important;
+    height:260px !important;
+    border-radius:16px;
+    background:#fff;
+    padding:10px;
+}
