@@ -52,38 +52,20 @@ qrText.addEventListener("keypress", function(e){
 
 });
 
-// Download QR
-downloadBtn.addEventListener("click", function(){
+downloadBtn.addEventListener("click", () => {
 
     const canvas = qrBox.querySelector("canvas");
-    const img = qrBox.querySelector("img");
 
-    if(canvas){
-
-        const link = document.createElement("a");
-        link.download = "azhar-labs-qr-code.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-
+    if (!canvas) {
+        alert("Generate a QR Code first.");
+        return;
     }
 
-    else if(img){
-
-        fetch(img.src)
-        .then(res => res.blob())
-        .then(blob => {
-
-            const url = URL.createObjectURL(blob);
-
-            const link = document.createElement("a");
-            link.href = url;
-            link.download = "azhar-labs-qr-code.png";
-            link.click();
-
-            URL.revokeObjectURL(url);
-
-        });
-
-    }
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = "azhar-labs-qr-code.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
 });
