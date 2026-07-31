@@ -26,7 +26,25 @@ function calculateAge() {
     }
 
     result.innerHTML = `
-        <h2>Your Age</h2>
-        <p>${years} Years, ${months} Months, ${days} Days</p>
-    `;
+    <h2>Your Age</h2>
+
+    <div class="age-result">
+
+        <div class="age-box">
+            <span>${years}</span>
+            <small>Years</small>
+        </div>
+
+        <div class="age-box">
+            <span>${months}</span>
+            <small>Months</small>
+        </div>
+
+        <div class="age-box">
+            <span>${days}</span>
+            <small>Days</small>
+        </div>
+
+    </div>
+`;
 }
