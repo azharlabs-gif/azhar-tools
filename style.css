@@ -1237,3 +1237,7 @@ visibility:visible;
     background:#3B82F6;
     box-shadow:0 10px 25px rgba(59,130,246,.35);
 }
+body.light-mode{
+    background:white !important;
+    color:black !important;
+}
