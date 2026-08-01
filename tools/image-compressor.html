@@ -6,40 +6,44 @@
 <title>Image Compressor | Azhar Labs</title>
 
 <link rel="stylesheet" href="image-compressor.css">
-  <!-- Google tag (gtag.js) -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-  gtag('config', 'G-P7748TVE22');
+gtag('config', 'G-P7748TVE22');
 </script>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🖼️ Image Compressor</h1>
+<h1><i class="fa-solid fa-image"></i> Image Compressor</h1>
 
 <p>Upload an image and compress it instantly.</p>
 
 <input type="file" id="imageInput" accept="image/*" hidden>
 
 <label for="imageInput" class="upload-btn">
-📤 Select Image
+<i class="fa-solid fa-upload"></i> Select Image
 </label>
-  
-  <p id="fileName"></p>
+
+<p id="fileName"></p>
 
 <br><br>
 
 <img id="preview" style="max-width:100%; display:none; border-radius:12px;">
 
 <br><br>
-  
-  <label for="quality">Compression Level</label>
+
+<label for="quality">Compression Level</label>
 
 <select id="quality">
     <option value="0.9">🟢 High Quality</option>
@@ -50,17 +54,23 @@
 
 <br><br>
 
-<button onclick="compressImage()">Compress Image</button>
-
-<br><br>
-  
-  <p id="sizeInfo"></p>
-
-<a id="downloadBtn" style="display:none;">📥 Download Compressed Image</a>
+<button onclick="compressImage()">
+<i class="fa-solid fa-compress"></i> Compress Image
+</button>
 
 <br><br>
 
-<a href="../index.html" class="back">⬅ Back to Home</a>
+<p id="sizeInfo"></p>
+
+<a id="downloadBtn" style="display:none;">
+<i class="fa-solid fa-download"></i> Download Compressed Image
+</a>
+
+<br><br>
+
+<a href="../index.html" class="back">
+<i class="fa-solid fa-arrow-left"></i> Back to Home
+</a>
 
 </div>
 
