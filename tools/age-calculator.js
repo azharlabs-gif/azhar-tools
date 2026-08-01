@@ -1,4 +1,3 @@
-
 function calculateAge() {
     const dob = document.getElementById("dob").value;
     const result = document.getElementById("result");
