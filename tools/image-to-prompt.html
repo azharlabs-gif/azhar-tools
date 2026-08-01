@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image to Prompt | Azhar Labs</title>
+
+<link rel="stylesheet" href="image-to-prompt.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-P7748TVE22');
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+Image to Prompt
+</h1>
+
+<p class="subtitle">
+Upload an image and generate a detailed AI prompt instantly.
+</p>
+
+  <div class="upload-section">
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+hidden
+>
+
+<label for="imageInput" class="upload-btn">
+<i class="fa-solid fa-cloud-arrow-up"></i>
+Select Image
+</label>
+
+<p id="fileName"></p>
+
+<div class="preview-box">
+
+<img
+id="preview"
+alt="Image Preview"
+style="display:none;"
+>
+
+</div>
+
+  </div>
+
+  <div class="options-section">
+
+<label for="style">
+<i class="fa-solid fa-palette"></i>
+Prompt Style
+</label>
+
+<select id="style">
+
+<option value="realistic">Realistic</option>
+
+<option value="cinematic">Cinematic</option>
+
+<option value="anime">Anime</option>
+
+<option value="ghibli">Ghibli</option>
+
+<option value="pixar">Pixar</option>
+
+<option value="fantasy">Fantasy</option>
+
+<option value="3d">3D Render</option>
+
+<option value="photorealistic">Photorealistic</option>
+
+</select>
+
+<label for="extraPrompt">
+<i class="fa-solid fa-pen"></i>
+Additional Instructions (Optional)
+</label>
+
+<textarea
+id="extraPrompt"
+rows="5"
+placeholder="Example: Add cinematic lighting, ultra realistic, 8K, shallow depth of field..."
+></textarea>
+
+<button id="generateBtn">
+<i class="fa-solid fa-bolt"></i>
+Generate Prompt
+</button>
+
+  </div>
+
+  <div class="output-section">
+
+<h2>
+<i class="fa-solid fa-file-lines"></i>
+Generated Prompt
+</h2>
+
+<textarea
+id="promptOutput"
+placeholder="Your AI-generated prompt will appear here..."
+readonly
+></textarea>
+
+<div class="action-buttons">
+
+<button id="copyBtn">
+<i class="fa-solid fa-copy"></i>
+Copy Prompt
+</button>
+
+<button id="clearBtn">
+<i class="fa-solid fa-trash"></i>
+Clear
+</button>
+
+</div>
+
+</div>
+
+<a href="../index.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+Back to Home
+</a>
+
+</div>
+
+<script src="image-to-prompt.js"></script>
+
+</body>
+</html>
