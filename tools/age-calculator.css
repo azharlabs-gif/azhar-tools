@@ -1,277 +1,282 @@
-/*========================================
-AZHAR LABS - AGE CALCULATOR
-PREMIUM CSS (PART 1)
-========================================*/
+/*==================================
+AZHAR LABS
+AGE CALCULATOR
+PREMIUM CSS
+PART 1
+==================================*/
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
 
-    font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 
-    min-height:100vh;
+background:
+linear-gradient(135deg,#071326,#15295c,#512f93);
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+min-height:100vh;
 
-    padding:30px 18px;
+display:flex;
+justify-content:center;
+align-items:center;
 
-    background:
-    linear-gradient(135deg,#081120,#182a59,#4b2d86);
+padding:30px 15px;
 
-    overflow-x:hidden;
+overflow-x:hidden;
 
-    position:relative;
+position:relative;
 
 }
 
-/* Floating Background */
+/* BACKGROUND GLOW */
 
 body::before{
 
-    content:"";
+content:"";
 
-    position:fixed;
+position:fixed;
 
-    width:450px;
-    height:450px;
+width:350px;
+height:350px;
 
-    top:-150px;
-    left:-120px;
+top:-120px;
+left:-120px;
 
-    background:rgba(37,99,235,.22);
+background:#2563eb;
 
-    filter:blur(130px);
+filter:blur(130px);
 
-    border-radius:50%;
+opacity:.22;
 
-    animation:floatOne 10s ease-in-out infinite;
+border-radius:50%;
 
-    z-index:-2;
+z-index:-2;
 
 }
 
 body::after{
 
-    content:"";
+content:"";
 
-    position:fixed;
+position:fixed;
 
-    width:420px;
-    height:420px;
+width:350px;
+height:350px;
 
-    bottom:-160px;
-    right:-120px;
+right:-120px;
+bottom:-120px;
 
-    background:rgba(139,92,246,.22);
+background:#7c3aed;
 
-    filter:blur(130px);
+filter:blur(130px);
 
-    border-radius:50%;
+opacity:.22;
 
-    animation:floatTwo 12s ease-in-out infinite;
+border-radius:50%;
 
-    z-index:-2;
+z-index:-2;
 
 }
+
+/* MAIN BOX */
 
 .container{
 
-    width:100%;
-    display:flex;
-    justify-content:center;
+width:100%;
+max-width:520px;
+
+padding:40px 28px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:30px;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.35),
+
+inset 0 1px 0 rgba(255,255,255,.08);
+
+position:relative;
+
+overflow:hidden;
+
+animation:show .7s ease;
 
 }
 
-.card{
+/* GLASS SHINE */
 
-    width:100%;
-    max-width:560px;
+.container::before{
 
-    padding:42px;
+content:"";
 
-    border-radius:34px;
+position:absolute;
 
-    position:relative;
+top:-50%;
 
-    overflow:hidden;
+left:-70%;
 
-    background:rgba(255,255,255,.08);
+width:60%;
 
-    backdrop-filter:blur(22px);
+height:220%;
 
-    border:1px solid rgba(255,255,255,.12);
+background:linear-gradient(
 
-    box-shadow:
-    0 30px 70px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.10);
+90deg,
 
-    animation:cardShow .8s ease;
+transparent,
 
-}
+rgba(255,255,255,.12),
 
-/* Glass Shine */
+transparent
 
-.card::before{
+);
 
-    content:"";
+transform:rotate(25deg);
 
-    position:absolute;
+animation:shine 8s linear infinite;
 
-    inset:0;
-
-    background:linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,.06),
-    transparent 70%
-    );
-
-    transform:translateX(-100%) skewX(-25deg);
-
-    animation:glassMove 8s linear infinite;
-
-    pointer-events:none;
+pointer-events:none;
 
 }
 
-.tool-icon{
-
-    width:95px;
-    height:95px;
-
-    margin:auto;
-
-    border-radius:26px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:42px;
-
-    color:#fff;
-
-    background:linear-gradient(135deg,#2563eb,#8b5cf6);
-
-    box-shadow:0 18px 45px rgba(59,130,246,.45);
-
-    animation:iconFloat 3.5s ease-in-out infinite;
-
-}
+/* TITLE */
 
 h1{
 
-    margin-top:24px;
+text-align:center;
 
-    text-align:center;
+font-size:42px;
 
-    color:#fff;
+font-weight:800;
 
-    font-size:42px;
+color:#fff;
 
-    font-weight:800;
+margin-bottom:18px;
 
-    line-height:1.2;
+line-height:1.2;
 
 }
+
+h1 i{
+
+color:#60a5fa;
+
+margin-right:12px;
+
+}
+
+/* SUBTITLE */
 
 .subtitle{
 
-    margin-top:18px;
+text-align:center;
 
-    text-align:center;
+font-size:19px;
 
-    color:#d7deef;
+line-height:1.8;
 
-    font-size:20px;
+color:#d6dcef;
 
-    line-height:1.8;
+margin-bottom:32px;
 
 }
 
+/* DATE INPUT */
+
 #dob{
 
-    width:100%;
+width:100%;
 
-    height:72px;
+height:68px;
 
-    margin-top:35px;
+padding:0 20px;
 
-    padding:0 24px;
+font-size:19px;
 
-    font-size:20px;
+color:#fff;
 
-    color:#fff;
+background:rgba(255,255,255,.07);
 
-    background:rgba(255,255,255,.08);
+border:2px solid rgba(255,255,255,.10);
 
-    border:2px solid rgba(255,255,255,.10);
+border-radius:18px;
 
-    border-radius:22px;
+outline:none;
 
-    outline:none;
-
-    transition:.35s;
+transition:.35s;
 
 }
 
 #dob:focus{
 
-    border-color:#4f8cff;
+border-color:#60a5fa;
 
-    box-shadow:0 0 30px rgba(79,140,255,.35);
+box-shadow:
+
+0 0 20px rgba(96,165,250,.30);
 
 }
 
+/* BUTTON */
+
 button{
 
-    width:100%;
+width:100%;
 
-    height:68px;
+height:64px;
 
-    margin-top:28px;
+margin-top:25px;
 
-    border:none;
+border:none;
 
-    border-radius:20px;
+border-radius:18px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    font-size:21px;
+font-size:21px;
 
-    font-weight:700;
+font-weight:700;
 
-    color:#fff;
+color:#fff;
 
-    background:linear-gradient(135deg,#2563eb,#60a5fa);
+background:linear-gradient(135deg,#2563eb,#60a5fa);
 
-    transition:.35s;
+box-shadow:
 
-    box-shadow:0 18px 40px rgba(59,130,246,.35);
+0 15px 40px rgba(37,99,235,.35);
+
+transition:.35s;
 
 }
 
 button:hover{
 
-    transform:translateY(-5px);
+transform:translateY(-4px);
 
-    box-shadow:0 24px 50px rgba(59,130,246,.45);
+box-shadow:
+
+0 20px 45px rgba(37,99,235,.45);
 
 }
 
-/* Animations */
+/* ANIMATION */
 
-@keyframes cardShow{
+@keyframes show{
 
 from{
 
 opacity:0;
+
 transform:translateY(40px);
 
 }
@@ -279,199 +284,173 @@ transform:translateY(40px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
 
 }
 
-@keyframes iconFloat{
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-}
-
-@keyframes glassMove{
+@keyframes shine{
 
 100%{
 
-transform:translateX(220%) skewX(-25deg);
+left:170%;
 
 }
 
-}
+    }
 
-@keyframes floatOne{
-
-50%{
-
-transform:translate(60px,40px);
-
-}
-
-}
-
-@keyframes floatTwo{
-
-50%{
-
-transform:translate(-60px,-40px);
-
-}
-
-                    }   
-/*========================================
-AZHAR LABS - AGE CALCULATOR
-PREMIUM CSS (PART 2)
-========================================*/
+/*==================================
+AZHAR LABS
+AGE CALCULATOR
+PREMIUM CSS
+PART 2
+==================================*/
 
 /* RESULT */
 
 #result{
 
-    margin-top:35px;
+margin-top:35px;
 
-    padding:30px;
+display:none;
 
-    border-radius:28px;
+animation:fadeUp .6s ease;
 
-    background:rgba(255,255,255,.06);
+}
 
-    border:1px solid rgba(255,255,255,.10);
+#result.show{
 
-    backdrop-filter:blur(20px);
-
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.08);
-
-    animation:resultShow .6s ease;
+display:block;
 
 }
 
 #result h2{
 
-    text-align:center;
+text-align:center;
 
-    color:#6EA8FF;
+font-size:34px;
 
-    font-size:38px;
+font-weight:800;
 
-    font-weight:800;
+color:#60a5fa;
 
-    margin-bottom:28px;
+margin-bottom:25px;
 
 }
 
-/* RESULT BOXES */
+/* AGE RESULT */
 
 .age-result{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(3,1fr);
 
-    gap:18px;
+gap:18px;
 
 }
 
+/* AGE CARD */
+
 .age-box{
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden;
 
-    padding:28px 15px;
+padding:28px 15px;
 
-    border-radius:22px;
+border-radius:22px;
 
-    text-align:center;
+background:rgba(255,255,255,.08);
 
-    background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.10),
-    rgba(255,255,255,.04)
-    );
+border:1px solid rgba(255,255,255,.12);
 
-    border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(20px);
 
-    backdrop-filter:blur(18px);
+text-align:center;
 
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.08);
+transition:.35s;
 
-    transition:.4s;
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.25),
+
+inset 0 1px 0 rgba(255,255,255,.08);
 
 }
 
 .age-box::before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    top:-40%;
+top:-40%;
 
-    left:-120%;
+left:-120%;
 
-    width:70%;
+width:70%;
 
-    height:220%;
+height:220%;
 
-    background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.28),
-    transparent
-    );
+background:linear-gradient(
 
-    transform:skewX(-25deg);
+90deg,
+
+transparent,
+
+rgba(255,255,255,.25),
+
+transparent
+
+);
+
+transform:skewX(-25deg);
+
+transition:.6s;
 
 }
 
 .age-box:hover::before{
 
-    animation:shine .8s linear;
+left:180%;
 
 }
 
 .age-box:hover{
 
-    transform:translateY(-8px) scale(1.03);
+transform:translateY(-8px);
 
-    border-color:#60A5FA;
+border-color:#60a5fa;
 
-    box-shadow:
-    0 25px 45px rgba(59,130,246,.35);
+box-shadow:
+
+0 20px 45px rgba(37,99,235,.35);
 
 }
 
 .age-box span{
 
-    display:block;
+display:block;
 
-    font-size:48px;
+font-size:48px;
 
-    font-weight:800;
+font-weight:800;
 
-    color:#66A7FF;
+color:#60a5fa;
 
-    margin-bottom:10px;
+margin-bottom:10px;
 
 }
 
 .age-box small{
 
-    color:#E5E7EB;
+font-size:18px;
 
-    font-size:18px;
-
-    letter-spacing:.5px;
+color:#dbe5ff;
 
 }
 
@@ -479,77 +458,41 @@ PREMIUM CSS (PART 2)
 
 .back{
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    gap:10px;
+margin-top:35px;
 
-    width:100%;
+width:100%;
 
-    height:64px;
+height:62px;
 
-    margin-top:35px;
+border-radius:18px;
 
-    text-decoration:none;
+text-decoration:none;
 
-    color:#fff;
+font-size:20px;
 
-    font-size:22px;
+font-weight:700;
 
-    font-weight:700;
+color:#fff;
 
-    border-radius:20px;
+background:rgba(255,255,255,.08);
 
-    background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
 
-    border:1px solid rgba(255,255,255,.12);
-
-    backdrop-filter:blur(18px);
-
-    transition:.35s;
+transition:.35s;
 
 }
 
 .back:hover{
 
-    transform:translateY(-5px);
+background:rgba(255,255,255,.12);
 
-    background:rgba(255,255,255,.12);
-
-}
-
-/* ANIMATIONS */
-
-@keyframes resultShow{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-@keyframes shine{
-
-    100%{
-
-        left:180%;
-
-    }
+transform:translateY(-4px);
 
 }
 
@@ -557,34 +500,237 @@ PREMIUM CSS (PART 2)
 
 @media(max-width:768px){
 
-    .card{
+.container{
 
-        padding:30px 22px;
+padding:28px 20px;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.subtitle{
+
+font-size:17px;
+
+}
+
+.age-result{
+
+grid-template-columns:1fr;
+
+}
+
+.age-box span{
+
+font-size:54px;
+
+}
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+    }
+
+/*==================================
+AZHAR LABS
+AGE CALCULATOR
+PREMIUM CSS
+PART 3 (FINAL)
+==================================*/
+
+/* Button Shine */
+
+button{
+    position:relative;
+    overflow:hidden;
+}
+
+button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform:skewX(-25deg);
+}
+
+button:hover::before{
+    animation:buttonShine .8s linear;
+}
+
+@keyframes buttonShine{
+
+    100%{
+        left:180%;
+    }
+
+}
+
+/* Floating Animation */
+
+.container{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0f172a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#3b82f6,#8b5cf6);
+
+    border-radius:20px;
+
+}
+
+/* Text Selection */
+
+::selection{
+
+    background:#3b82f6;
+    color:#fff;
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+    body{
+
+        padding:18px;
+
+    }
+
+    .container{
+
+        border-radius:24px;
+        padding:24px 18px;
 
     }
 
     h1{
 
-        font-size:34px;
+        font-size:30px;
 
     }
 
     .subtitle{
 
+        font-size:15px;
+
+    }
+
+    #dob{
+
+        height:60px;
+        font-size:17px;
+
+    }
+
+    button{
+
+        height:58px;
         font-size:18px;
 
     }
 
-    .age-result{
+    #result h2{
 
-        grid-template-columns:1fr;
+        font-size:28px;
+
+    }
+
+    .age-box{
+
+        padding:22px;
 
     }
 
     .age-box span{
 
-        font-size:54px;
+        font-size:42px;
 
     }
 
+    .age-box small{
+
+        font-size:16px;
+
     }
+
+    .back{
+
+        height:56px;
+        font-size:18px;
+
+    }
+
+}
+
+/* Performance */
+
+*{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
