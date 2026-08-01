@@ -312,17 +312,9 @@ PART 2
 
 #result{
 
-margin-top:35px;
+    margin-top:35px;
 
-display:none;
-
-animation:fadeUp .6s ease;
-
-}
-
-#result.show{
-
-display:block;
+    animation:fadeUp .6s ease;
 
 }
 
