@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JSON Formatter & Validator | Azhar Labs</title>
+
+<link rel="stylesheet" href="json-formatter-validator.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-P7748TVE22');
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+<i class="fa-solid fa-code"></i>
+JSON Formatter & Validator
+</h1>
+
+<p class="subtitle">
+Format, validate and beautify your JSON instantly with a clean and professional interface.
+</p>
+ <div class="card">
+
+<h2>
+<i class="fa-solid fa-file-code"></i>
+JSON Input
+</h2>
+
+<textarea
+id="jsonInput"
+placeholder='Paste your JSON here...
+
+Example:
+{
+  "name": "Azhar",
+  "website": "Azhar Labs",
+  "tools": 12
+}'
+spellcheck="false"
+></textarea>
+
+<div class="button-group">
+
+<button id="formatBtn">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+Format JSON
+</button>
+
+<button id="validateBtn">
+<i class="fa-solid fa-circle-check"></i>
+Validate JSON
+</button>
+
+</div>
+
+<div id="statusMessage"></div>
+
+ </div>
+  <div class="card">
+
+<h2>
+<i class="fa-solid fa-code"></i>
+Formatted JSON
+</h2>
+
+<textarea
+id="jsonOutput"
+placeholder="Your formatted JSON will appear here..."
+readonly
+spellcheck="false"
+></textarea>
+
+<div class="button-group">
+
+<button id="copyBtn">
+<i class="fa-solid fa-copy"></i>
+Copy
+</button>
+
+<button id="downloadBtn">
+<i class="fa-solid fa-download"></i>
+Download
+</button>
+
+<button id="clearBtn">
+<i class="fa-solid fa-trash"></i>
+Clear
+</button>
+
+</div>
+
+  </div>
+  <a href="../index.html" class="back-btn">
+<i class="fa-solid fa-arrow-left"></i>
+Back to Home
+</a>
+
+</div>
+
+<script src="json-formatter-validator.js"></script>
+
+</body>
+</html>
