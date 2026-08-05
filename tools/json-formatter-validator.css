@@ -1,25 +1,62 @@
+/* =========================
+   AZHAR LABS - PREMIUM UI V2
+   PART 1
+========================= */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+}
+
+:root{
+
+--bg:#060816;
+--bg2:#0f172a;
+--card:rgba(18,28,52,.72);
+
+--primary:#3b82f6;
+--primary-dark:#2563eb;
+
+--text:#ffffff;
+--text-light:#cbd5e1;
+
+--border:rgba(255,255,255,.08);
+
+--shadow:0 20px 50px rgba(0,0,0,.45);
+
+--radius:22px;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
 }
 
 body{
 
-background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+
+background:
+radial-gradient(circle at top left,#1d4ed8 0%,transparent 30%),
+radial-gradient(circle at bottom right,#2563eb 0%,transparent 30%),
+linear-gradient(135deg,var(--bg),var(--bg2));
+
+color:var(--text);
 
 min-height:100vh;
+
+padding:30px 15px;
 
 display:flex;
 
 justify-content:center;
 
-align-items:center;
+align-items:flex-start;
 
-padding:20px;
-
-color:#fff;
+overflow-x:hidden;
 
 }
 
@@ -27,59 +64,75 @@ color:#fff;
 
 width:100%;
 
-max-width:850px;
+max-width:900px;
 
-background:rgba(255,255,255,.08);
+background:var(--card);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 
--webkit-backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(20px);
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid var(--border);
 
-border-radius:22px;
+border-radius:var(--radius);
 
 padding:35px;
 
-box-shadow:0 20px 50px rgba(0,0,0,.35);
+box-shadow:var(--shadow);
 
-animation:fadeUp .7s ease;
+position:relative;
 
-}
+overflow:hidden;
 
-h1{
-
-font-size:2.2rem;
-
-font-weight:700;
-
-text-align:center;
-
-margin-bottom:12px;
-
-color:#fff;
+animation:fadeUp .6s ease;
 
 }
 
-h1 i{
+.container::before{
 
-margin-right:10px;
+content:"";
 
-color:#60a5fa;
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:260px;
+
+height:260px;
+
+background:rgba(59,130,246,.18);
+
+border-radius:50%;
+
+filter:blur(70px);
+
+pointer-events:none;
 
 }
 
-.subtitle{
+.container::after{
 
-text-align:center;
+content:"";
 
-font-size:1rem;
+position:absolute;
 
-color:#dbeafe;
+bottom:-120px;
 
-line-height:1.7;
+left:-120px;
 
-margin-bottom:30px;
+width:260px;
+
+height:260px;
+
+background:rgba(37,99,235,.16);
+
+border-radius:50%;
+
+filter:blur(70px);
+
+pointer-events:none;
 
 }
 
@@ -89,7 +142,7 @@ from{
 
 opacity:0;
 
-transform:translateY(30px);
+transform:translateY(25px);
 
 }
 
@@ -102,27 +155,100 @@ transform:translateY(0);
 }
 
 }
+/* =========================
+   AZHAR LABS - PREMIUM UI V2
+   PART 2
+========================= */
+
+h1{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:14px;
+
+font-size:2.4rem;
+
+font-weight:800;
+
+letter-spacing:-1px;
+
+text-align:center;
+
+margin-bottom:15px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+h1 i{
+
+font-size:2.2rem;
+
+background:linear-gradient(135deg,#60a5fa,#2563eb);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.subtitle{
+
+max-width:650px;
+
+margin:0 auto 35px;
+
+text-align:center;
+
+font-size:1.08rem;
+
+line-height:1.8;
+
+color:var(--text-light);
+
+position:relative;
+
+z-index:2;
+
+}
+
 .card{
 
-background:rgba(255,255,255,.06);
+position:relative;
 
-border:1px solid rgba(255,255,255,.12);
+z-index:2;
 
-border-radius:18px;
+background:rgba(255,255,255,.05);
 
-padding:22px;
+border:1px solid rgba(255,255,255,.08);
 
-margin-bottom:25px;
+border-radius:20px;
+
+padding:24px;
+
+margin-bottom:24px;
+
+transition:.35s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-3px);
+
+border-color:rgba(59,130,246,.45);
+
+box-shadow:0 15px 35px rgba(37,99,235,.18);
 
 }
 
 .card h2{
-
-font-size:1.2rem;
-
-margin-bottom:15px;
-
-color:#fff;
 
 display:flex;
 
@@ -130,27 +256,41 @@ align-items:center;
 
 gap:10px;
 
+font-size:1.25rem;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+color:#fff;
+
 }
 
 .card h2 i{
 
 color:#60a5fa;
 
-}
+font-size:1.2rem;
+
+  }
+/* =========================
+   AZHAR LABS - PREMIUM UI V2
+   PART 3
+========================= */
 
 textarea{
 
 width:100%;
 
-min-height:220px;
+min-height:230px;
 
-padding:16px;
+padding:18px;
 
-border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.04);
 
-border-radius:14px;
+border:1px solid rgba(255,255,255,.10);
 
-background:rgba(255,255,255,.08);
+border-radius:16px;
 
 color:#fff;
 
@@ -158,25 +298,29 @@ font-size:15px;
 
 line-height:1.7;
 
+font-family:Consolas,Monaco,"Courier New",monospace;
+
 resize:vertical;
 
 outline:none;
 
-transition:.3s;
+transition:.3s ease;
 
 }
 
 textarea::placeholder{
 
-color:#cbd5e1;
+color:#94a3b8;
 
 }
 
 textarea:focus{
 
-border-color:#60a5fa;
+border-color:var(--primary);
 
-box-shadow:0 0 0 4px rgba(96,165,250,.18);
+background:rgba(255,255,255,.06);
+
+box-shadow:0 0 0 4px rgba(59,130,246,.18);
 
 }
 
@@ -184,43 +328,57 @@ box-shadow:0 0 0 4px rgba(96,165,250,.18);
 
 margin-top:16px;
 
-font-weight:600;
-
 font-size:.95rem;
+
+font-weight:600;
 
 min-height:24px;
 
+color:var(--text-light);
+
+word-break:break-word;
+
 }
+/* =========================
+   AZHAR LABS - PREMIUM UI V2
+   PART 4
+========================= */
+
 .button-group{
 
 display:flex;
 
 flex-wrap:wrap;
 
-gap:15px;
+gap:14px;
 
 margin-top:20px;
 
 }
 
-button,
-.back-btn{
+button{
 
-padding:14px 22px;
+flex:1;
+
+min-width:160px;
+
+padding:14px 20px;
 
 border:none;
 
-border-radius:12px;
+border-radius:14px;
+
+background:linear-gradient(135deg,#3b82f6,#2563eb);
+
+color:#fff;
 
 font-size:15px;
 
-font-weight:600;
+font-weight:700;
 
 cursor:pointer;
 
-text-decoration:none;
-
-display:inline-flex;
+display:flex;
 
 align-items:center;
 
@@ -228,17 +386,9 @@ justify-content:center;
 
 gap:8px;
 
-transition:all .3s ease;
+transition:.3s ease;
 
-}
-
-button{
-
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-
-color:#fff;
-
-flex:1;
+box-shadow:0 10px 25px rgba(37,99,235,.25);
 
 }
 
@@ -246,7 +396,7 @@ button:hover{
 
 transform:translateY(-3px);
 
-box-shadow:0 12px 25px rgba(37,99,235,.35);
+box-shadow:0 16px 35px rgba(37,99,235,.35);
 
 }
 
@@ -258,27 +408,50 @@ transform:scale(.98);
 
 .back-btn{
 
-margin-top:10px;
+display:flex;
 
-background:rgba(255,255,255,.08);
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+width:100%;
+
+margin-top:12px;
+
+padding:15px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:700;
+
+background:transparent;
 
 color:#fff;
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.12);
 
-width:100%;
+transition:.3s ease;
 
 }
 
 .back-btn:hover{
 
-background:rgba(255,255,255,.15);
+background:rgba(255,255,255,.06);
+
+border-color:rgba(59,130,246,.45);
 
 transform:translateY(-2px);
 
-box-shadow:0 10px 20px rgba(0,0,0,.2);
-
 }
+/* =========================
+   AZHAR LABS - PREMIUM UI V2
+   PART 5
+========================= */
+
 textarea::-webkit-scrollbar{
 
 width:10px;
@@ -287,45 +460,146 @@ width:10px;
 
 textarea::-webkit-scrollbar-track{
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.05);
 
-border-radius:10px;
+border-radius:20px;
 
 }
 
 textarea::-webkit-scrollbar-thumb{
 
-background:#60a5fa;
+background:linear-gradient(180deg,#60a5fa,#2563eb);
 
-border-radius:10px;
+border-radius:20px;
 
 }
 
 textarea::-webkit-scrollbar-thumb:hover{
 
-background:#3b82f6;
+background:linear-gradient(180deg,#93c5fd,#3b82f6);
 
 }
 
 ::selection{
 
-background:#2563eb;
+background:#3b82f6;
 
 color:#fff;
 
 }
 
-@media(max-width:768px){
+button,
+.back-btn,
+.card,
+textarea{
+
+transition:all .3s ease;
+
+}
+
+button:focus,
+.back-btn:focus,
+textarea:focus{
+
+outline:none;
+
+}
+
+button i,
+.back-btn i{
+
+font-size:15px;
+
+}
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:1px;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+opacity:.7;
+
+}
+
+button:hover i{
+
+transform:translateX(2px);
+
+transition:.3s;
+
+}
+/* =========================
+   AZHAR LABS - PREMIUM UI V2
+   PART 6
+========================= */
+
+@media (max-width:900px){
 
 .container{
 
-padding:22px;
+padding:28px;
 
 }
 
 h1{
 
-font-size:1.8rem;
+font-size:2rem;
+
+}
+
+.subtitle{
+
+font-size:1rem;
+
+}
+
+}
+
+@media (max-width:768px){
+
+body{
+
+padding:18px;
+
+}
+
+.container{
+
+padding:22px;
+
+border-radius:18px;
+
+}
+
+h1{
+
+font-size:1.75rem;
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+h1 i{
+
+font-size:2rem;
 
 }
 
@@ -333,17 +607,21 @@ font-size:1.8rem;
 
 font-size:.95rem;
 
+margin-bottom:25px;
+
 }
 
 .card{
 
 padding:18px;
 
+border-radius:16px;
+
 }
 
 .card h2{
 
-font-size:1.05rem;
+font-size:1.1rem;
 
 }
 
@@ -351,9 +629,9 @@ textarea{
 
 min-height:180px;
 
-font-size:14px;
+padding:15px;
 
-padding:14px;
+font-size:14px;
 
 }
 
@@ -363,32 +641,27 @@ flex-direction:column;
 
 }
 
-button,
-.back-btn{
+button{
 
 width:100%;
 
-font-size:14px;
+min-width:100%;
 
-padding:13px;
+}
+
+.back-btn{
+
+padding:14px;
 
 }
 
 }
 
-@media(max-width:480px){
-
-body{
-
-padding:15px;
-
-}
+@media (max-width:480px){
 
 .container{
 
-padding:18px;
-
-border-radius:18px;
+padding:16px;
 
 }
 
@@ -412,10 +685,54 @@ padding:15px;
 
 }
 
+.card h2{
+
+font-size:1rem;
+
+}
+
 textarea{
 
 min-height:160px;
 
+font-size:13px;
+
+padding:14px;
+
 }
+
+button{
+
+font-size:14px;
+
+padding:13px;
+
+}
+
+.back-btn{
+
+font-size:14px;
+
+padding:13px;
+
+}
+
+}
+
+button:hover{
+
+filter:brightness(1.08);
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+.back-btn:active{
+
+transform:scale(.98);
 
 }
