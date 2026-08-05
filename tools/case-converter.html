@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Case Converter | Azhar Labs</title>
+
+<meta name="description" content="Convert text instantly to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case and kebab-case.">
+
+<link rel="stylesheet" href="case-converter.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7748TVE22"></script>
+
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+
+dataLayer.push(arguments);
+
+}
+
+gtag("js", new Date());
+
+gtag("config","G-P7748TVE22");
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+
+<i class="fas fa-font"></i>
+
+Case Converter
+
+</h1>
+
+<p class="subtitle">
+
+Convert text instantly into UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case and kebab-case — fast, secure and completely in your browser.
+
+</p>
+  
+<div class="card">
+
+    <h2>
+        <i class="fas fa-keyboard"></i>
+        Input Text
+    </h2>
+
+    <textarea
+        id="inputText"
+        placeholder="Type or paste your text here..."
+        spellcheck="false"
+    ></textarea>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <span>Characters</span>
+            <strong id="charCount">0</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Words</span>
+            <strong id="wordCount">0</strong>
+        </div>
+
+    </div>
+
+    <div class="button-group">
+
+        <button id="upperBtn">
+            <i class="fas fa-arrow-up"></i>
+            UPPERCASE
+        </button>
+
+        <button id="lowerBtn">
+            <i class="fas fa-arrow-down"></i>
+            lowercase
+        </button>
+
+        <button id="titleBtn">
+            <i class="fas fa-heading"></i>
+            Title Case
+        </button>
+
+        <button id="sentenceBtn">
+            <i class="fas fa-paragraph"></i>
+            Sentence Case
+        </button>
+
+    </div>
+
+</div>
+<div class="card">
+
+    <h2>
+        <i class="fas fa-wand-magic-sparkles"></i>
+        More Conversions
+    </h2>
+
+    <div class="button-group">
+
+        <button id="camelBtn">
+            <i class="fas fa-code"></i>
+            camelCase
+        </button>
+
+        <button id="pascalBtn">
+            <i class="fas fa-cubes"></i>
+            PascalCase
+        </button>
+
+        <button id="snakeBtn">
+            <i class="fas fa-underline"></i>
+            snake_case
+        </button>
+
+        <button id="kebabBtn">
+            <i class="fas fa-minus"></i>
+            kebab-case
+        </button>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <h2>
+        <i class="fas fa-file-lines"></i>
+        Output
+    </h2>
+
+    <textarea
+        id="outputText"
+        placeholder="Your converted text will appear here..."
+        readonly
+        spellcheck="false"
+    ></textarea>
+
+    <div id="statusMessage"></div>
+
+</div>
+<div class="card">
+
+    <h2>
+        <i class="fas fa-sliders"></i>
+        Actions
+    </h2>
+
+    <div class="button-group">
+
+        <button id="copyBtn">
+            <i class="fas fa-copy"></i>
+            Copy
+        </button>
+
+        <button id="downloadBtn">
+            <i class="fas fa-download"></i>
+            Download
+        </button>
+
+        <button id="clearBtn">
+            <i class="fas fa-trash"></i>
+            Clear
+        </button>
+
+    </div>
+
+</div>
+
+<a href="../index.html" class="back-btn">
+
+    <i class="fas fa-arrow-left"></i>
+
+    Back to Home
+
+</a>
+
+</div>
+
+<script src="case-converter.js"></script>
+
+</body>
+
+</html>
