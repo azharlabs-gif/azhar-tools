@@ -36,6 +36,10 @@
       <p>
         Create natural, human-like voiceovers in seconds.
       </p>
+      <button id="apiSettingsBtn" class="api-settings-btn">
+    <i class="fas fa-gear"></i>
+    API Settings
+      </button>
     </div>
 
     <div class="editor">
@@ -136,6 +140,70 @@
 
 </div>
 
+  <!-- API Settings Modal -->
+
+<div id="apiModal" class="api-modal">
+
+    <div class="api-modal-content">
+
+        <h2>
+            <i class="fas fa-key"></i>
+            ElevenLabs API Settings
+        </h2>
+
+        <p>
+            Free quota unavailable? Use your own ElevenLabs API Key.
+        </p>
+
+        <input
+            type="password"
+            id="userApiKey"
+            placeholder="Enter your ElevenLabs API Key">
+
+        <div class="api-buttons">
+
+            <button id="saveApiBtn">Save API Key</button>
+
+            <button id="removeApiBtn">Remove Key</button>
+
+            <button id="closeApiBtn">Close</button>
+
+        </div>
+
+        <small>
+            🔒 Your API key is stored only in your browser.
+        </small>
+
+    </div>
+
+</div>
+
+<!-- Quota Exhausted Modal -->
+
+<div id="quotaModal" class="api-modal">
+
+    <div class="api-modal-content">
+
+        <h2>
+            Free Quota Exhausted
+        </h2>
+
+        <p>
+            Our free ElevenLabs quota has been exhausted.
+            Use your own API Key to continue.
+        </p>
+
+        <button id="openApiSettingsBtn">
+            Use My Own API Key
+        </button>
+
+        <button id="closeQuotaBtn">
+            Close
+        </button>
+
+    </div>
+
+  </div>
 <script src="text-to-speech.js"></script>
 
 </body>
