@@ -71,7 +71,8 @@ generateBtn.addEventListener("click", async () => {
             },
             body: JSON.stringify({
     text: text,
-    voice_id: voice.value
+    voice_id: voice.value,
+    user_api_key: localStorage.getItem("elevenlabs_api_key") || null
 })
         });
 
