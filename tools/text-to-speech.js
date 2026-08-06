@@ -76,8 +76,19 @@ generateBtn.addEventListener("click", async () => {
         });
 
         if (!response.ok) {
-            const error = await response.text();
-            throw new Error(error);
+
+    const error = await response.json();
+
+    if (error.error === "QUOTA_EXHAUSTED") {
+
+        document.getElementById("quotaModal").style.display = "flex";
+
+        return;
+
+    }
+
+    throw new Error(error.error);
+
         }
 
         const audioBlob = await response.blob();
@@ -95,4 +106,105 @@ generateBtn.addEventListener("click", async () => {
         generateBtn.innerHTML =
             '<i class="fa-solid fa-wand-magic-sparkles"></i> Generate Voice';
     }
+});
+// ==========================
+// API SETTINGS - PART 1
+// ==========================
+
+const apiSettingsBtn = document.getElementById("apiSettingsBtn");
+const apiModal = document.getElementById("apiModal");
+const quotaModal = document.getElementById("quotaModal");
+
+const closeApiBtn = document.getElementById("closeApiBtn");
+const closeQuotaBtn = document.getElementById("closeQuotaBtn");
+const openApiSettingsBtn = document.getElementById("openApiSettingsBtn");
+
+apiSettingsBtn.addEventListener("click", () => {
+
+    apiModal.style.display = "flex";
+
+});
+
+closeApiBtn.addEventListener("click", () => {
+
+    apiModal.style.display = "none";
+
+});
+
+closeQuotaBtn.addEventListener("click", () => {
+
+    quotaModal.style.display = "none";
+
+});
+
+openApiSettingsBtn.addEventListener("click", () => {
+
+    quotaModal.style.display = "none";
+
+    apiModal.style.display = "flex";
+
+});
+
+window.addEventListener("click", (event) => {
+
+    if (event.target === apiModal) {
+
+        apiModal.style.display = "none";
+
+    }
+
+    if (event.target === quotaModal) {
+
+        quotaModal.style.display = "none";
+
+    }
+
+});
+// ==========================
+// API SETTINGS - PART 2
+// ==========================
+
+const userApiKey = document.getElementById("userApiKey");
+const saveApiBtn = document.getElementById("saveApiBtn");
+const removeApiBtn = document.getElementById("removeApiBtn");
+
+// Load saved API key
+const savedApiKey = localStorage.getItem("elevenlabs_api_key");
+
+if (savedApiKey) {
+
+    userApiKey.value = savedApiKey;
+
+}
+
+// Save API Key
+saveApiBtn.addEventListener("click", () => {
+
+    const key = userApiKey.value.trim();
+
+    if (!key) {
+
+        alert("Please enter your ElevenLabs API Key.");
+
+        return;
+
+    }
+
+    localStorage.setItem("elevenlabs_api_key", key);
+
+    alert("✅ API Key saved successfully.");
+
+    apiModal.style.display = "none";
+
+});
+
+// Remove API Key
+removeApiBtn.addEventListener("click", () => {
+
+    localStorage.removeItem("elevenlabs_api_key");
+
+    userApiKey.value = "";
+
+    alert("✅ API Key removed successfully.");
+
 });
